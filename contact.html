@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Good Mushroom | Buy Mushrooms or Sell Your Harvest</title>
+  <meta name="description" content="Connect with Good Mushroom — send a buyer enquiry for premium Indian mushrooms and extracts, or register as a mushroom farmer to sell your produce. Fast response guaranteed." />
+  <link rel="canonical" href="https://goodmushroom.in/contact.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-info-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-top: 32px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .ci-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-muted);
+      border: 1px solid rgba(217,107,59,0.3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .ci-text h5 { color: rgba(255,255,255,0.5); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .ci-text span { color: #fff; font-size: 0.95rem; }
+    .ci-text a { color: var(--accent-light); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-icon">🍄</span> Good Mushroom</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="#contact-forms" class="btn btn-primary nav-cta">Get a Quote</a>
+    <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image:url('https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=1400');">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Contact</span></nav>
+    <div class="eyebrow">Get In Touch</div>
+    <h1>Let's Start a<br>Conversation</h1>
+    <p>Whether you're a buyer looking for premium Indian mushrooms, or a farmer wanting to sell — we want to hear from you.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact-forms" style="padding-top:80px; padding-bottom:96px;">
+  <div class="container">
+
+    <div class="grid-2" style="gap:48px; align-items:flex-start;">
+
+      <!-- LEFT: FORMS -->
+      <div>
+        <div class="contact-tabs reveal">
+          <button class="tab-btn active" data-tab="buyer-panel">🌍 I'm a Buyer</button>
+          <button class="tab-btn" data-tab="seller-panel" id="seller-tab">🌾 I'm a Farmer</button>
+        </div>
+
+        <!-- BUYER FORM -->
+        <div class="form-panel active" id="buyer-panel">
+          <div class="contact-form-wrap" style="margin:0; max-width:100%;">
+            <div class="eyebrow" style="color:var(--accent); margin-bottom:8px;">For Importers & Buyers</div>
+            <h3 style="color:#fff; font-size:1.6rem; margin-bottom:24px;">Request a Quote</h3>
+            <form id="buyer-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Buyer Enquiry — Good Mushroom" />
+              <input type="hidden" name="form_type" value="buyer" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-name">Full Name *</label>
+                  <input type="text" id="b-name" name="name" required placeholder="Your Name" />
+                </div>
+                <div class="form-group">
+                  <label for="b-company">Company Name</label>
+                  <input type="text" id="b-company" name="company" placeholder="Company (optional)" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-email">Email Address *</label>
+                  <input type="email" id="b-email" name="email" required placeholder="you@email.com" />
+                </div>
+                <div class="form-group">
+                  <label for="b-phone">WhatsApp / Phone</label>
+                  <input type="tel" id="b-phone" name="phone" placeholder="+1 555 123 4567" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-country">Country *</label>
+                  <select id="b-country" name="country" required>
+                    <option value="">Select country...</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Germany</option>
+                    <option>France</option>
+                    <option>Netherlands</option>
+                    <option>Australia</option>
+                    <option>Canada</option>
+                    <option>UAE / Dubai</option>
+                    <option>Japan</option>
+                    <option>South Korea</option>
+                    <option>Singapore</option>
+                    <option>China</option>
+                    <option>Other (mention in message)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="b-type">Buyer Type</label>
+                  <select id="b-type" name="buyer_type">
+                    <option value="">Select...</option>
+                    <option>Importer / Distributor</option>
+                    <option>Supplement Brand / Manufacturer</option>
+                    <option>Restaurant / Food Service</option>
+                    <option>Retail Brand / Supermarket</option>
+                    <option>Wellness / Spa Brand</option>
+                    <option>Individual / Personal Use</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="b-product">Product(s) Interested In *</label>
+                <select id="b-product" name="product" required>
+                  <option value="">Select product...</option>
+                  <option>Cordyceps Militaris (Dried)</option>
+                  <option>Cordyceps Militaris (Extract/Powder)</option>
+                  <option>Shiitake Mushrooms (Dried)</option>
+                  <option>Lion's Mane (Dried / Extract)</option>
+                  <option>Oyster Mushrooms (Fresh / Dried)</option>
+                  <option>Reishi / Ganoderma</option>
+                  <option>Mushroom Extract Powders (Specify)</option>
+                  <option>Custom Mushroom Blend</option>
+                  <option>Ashwagandha</option>
+                  <option>Tulsi / Brahmi / Other Herbs</option>
+                  <option>Multiple Products (describe below)</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="b-quantity">Estimated Quantity</label>
+                  <input type="text" id="b-quantity" name="quantity" placeholder="e.g. 50kg per month" />
+                </div>
+                <div class="form-group">
+                  <label for="b-frequency">Order Frequency</label>
+                  <select id="b-frequency" name="frequency">
+                    <option value="">Select...</option>
+                    <option>One-time trial order</option>
+                    <option>Monthly recurring</option>
+                    <option>Quarterly</option>
+                    <option>Annual contract</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="b-message">Additional Requirements or Questions</label>
+                <textarea id="b-message" name="message" placeholder="Tell us about your quality standards, certifications needed (organic, HACCP, etc.), packaging preferences, or any other specific requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                📤 Send Buyer Enquiry
+              </button>
+              <p class="form-note">We respond within 1 business day (Mon–Sat, 10am–6pm IST). Your information is kept strictly confidential.</p>
+              <div class="success-msg">✅ Thank you! Your enquiry has been received. We'll be in touch within 24 hours with a detailed response.</div>
+            </form>
+          </div>
+        </div>
+
+        <!-- SELLER FORM -->
+        <div class="form-panel" id="seller-panel">
+          <div class="contact-form-wrap" style="margin:0; max-width:100%;">
+            <div class="eyebrow" style="color:var(--accent); margin-bottom:8px;">For Farmers & Sellers</div>
+            <h3 style="color:#fff; font-size:1.6rem; margin-bottom:24px;">Register as a Seller</h3>
+            <form id="seller-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Farmer/Seller Registration — Good Mushroom" />
+              <input type="hidden" name="form_type" value="seller" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="s-name">Your Name *</label>
+                  <input type="text" id="s-name" name="name" required placeholder="Rajesh Kumar" />
+                </div>
+                <div class="form-group">
+                  <label for="s-phone">WhatsApp / Phone *</label>
+                  <input type="tel" id="s-phone" name="phone" required placeholder="+91 98765 43210" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="s-email">Email Address</label>
+                  <input type="email" id="s-email" name="email" placeholder="Optional" />
+                </div>
+                <div class="form-group">
+                  <label for="s-state">State / Region *</label>
+                  <select id="s-state" name="state" required>
+                    <option value="">Select state...</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Uttarakhand</option>
+                    <option>Punjab</option>
+                    <option>Haryana</option>
+                    <option>Maharashtra</option>
+                    <option>Karnataka</option>
+                    <option>Kerala</option>
+                    <option>Tamil Nadu</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Telangana</option>
+                    <option>Odisha</option>
+                    <option>West Bengal</option>
+                    <option>Assam / Northeast</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Other (mention below)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="s-district">District / Tehsil / Village</label>
+                <input type="text" id="s-district" name="district" placeholder="e.g. Kullu, Manali area" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="s-product">What do you grow / supply? *</label>
+                  <select id="s-product" name="product" required>
+                    <option value="">Select...</option>
+                    <option>Oyster Mushrooms</option>
+                    <option>Shiitake Mushrooms</option>
+                    <option>Lion's Mane Mushrooms</option>
+                    <option>Cordyceps Militaris</option>
+                    <option>Button / Crimini Mushrooms</option>
+                    <option>Reishi / Ganoderma</option>
+                    <option>Wild Collected / Forest Mushrooms</option>
+                    <option>Medicinal Herbs (specify below)</option>
+                    <option>Multiple (describe below)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="s-capacity">Monthly Volume Available</label>
+                  <input type="text" id="s-capacity" name="capacity" placeholder="e.g. 200kg/month" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="s-experience">How long have you been growing?</label>
+                <select id="s-experience" name="experience">
+                  <option value="">Select...</option>
+                  <option>Just starting out</option>
+                  <option>Less than 1 year</option>
+                  <option>1–3 years</option>
+                  <option>3–5 years</option>
+                  <option>5+ years</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="s-message">Tell Us About Your Farm &amp; Operation</label>
+                <textarea id="s-message" name="message" placeholder="Share details: growing method (substrate, indoor/outdoor), current buyers, any certifications, the kind of support you're looking for, challenges you face in selling, etc."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                🌾 Submit Seller Registration
+              </button>
+              <p class="form-note">Our sourcing team will contact you within 48 hours. We visit farms across India for in-person assessment.</p>
+              <div class="success-msg">✅ Thank you for registering! Our team will reach out on WhatsApp within 48 hours.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTACT INFO -->
+      <div class="reveal reveal-delay-2">
+        <h3 style="color:#fff; font-size:1.8rem; margin-bottom:8px;">We're Here to Help</h3>
+        <p style="color:rgba(255,255,255,0.65); margin-bottom:32px;">Have a quick question before filling the form? Reach out directly. We're a team of real people who love mushrooms — we'll respond personally.</p>
+
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="ci-icon">✉️</div>
+            <div class="ci-text">
+              <h5>Email Us</h5>
+              <span><a href="mailto:hello@goodmushroom.in">hello@goodmushroom.in</a></span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">💬</div>
+            <div class="ci-text">
+              <h5>WhatsApp</h5>
+              <span>Available for quick queries<br><a href="https://wa.me/919999999999" target="_blank">Message us on WhatsApp</a></span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">📍</div>
+            <div class="ci-text">
+              <h5>Based In</h5>
+              <span>Himachal Pradesh, India<br>(Sourcing across all of India)</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">⏰</div>
+            <div class="ci-text">
+              <h5>Working Hours</h5>
+              <span>Monday – Saturday<br>10:00 AM – 6:00 PM IST</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🔄</div>
+            <div class="ci-text">
+              <h5>Response Time</h5>
+              <span>Buyer enquiries: within 24 hours<br>Farmer registrations: within 48 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick info box -->
+        <div style="background: rgba(217,107,59,0.1); border: 1px solid rgba(217,107,59,0.3); border-radius:var(--radius-lg); padding:28px; margin-top:24px;">
+          <h5 style="color:var(--accent-light); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">📦 For Sample Requests</h5>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.7;">We offer paid product samples to serious buyers (cost + shipping). Typical sample sizes are 100g–500g. Mention "sample request" in your enquiry and we'll quote you for the samples along with your product of interest.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius:var(--radius-lg); padding:28px; margin-top:16px;">
+          <h5 style="color:rgba(255,255,255,0.5); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">🌾 For Farmers in HP</h5>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.7;">If you're growing mushrooms in Himachal Pradesh, Uttarakhand, or nearby states, we may be able to visit your farm directly. Mention your location in the form and we'll try to schedule a visit.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ MINI -->
+<section style="background:var(--cream);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Before You Write</div>
+      <h2>Quick Answers</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <div style="background:#fff; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border-light);">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🌍</div>
+        <h4 style="font-family:var(--font-display); font-size:1.2rem; color:var(--primary); margin-bottom:10px;">Can you ship to my country?</h4>
+        <p style="font-size:0.88rem; color:var(--text-mid);">We export worldwide. Just mention your country in the form and we'll confirm shipping routes, timelines, and any import restrictions we're aware of.</p>
+      </div>
+      <div style="background:#fff; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border-light);">
+        <div style="font-size:1.8rem; margin-bottom:12px;">📦</div>
+        <h4 style="font-family:var(--font-display); font-size:1.2rem; color:var(--primary); margin-bottom:10px;">What's the minimum order?</h4>
+        <p style="font-size:0.88rem; color:var(--text-mid);">MOQ varies by product. Typically 10–50 kg for dried mushrooms, 5 kg for extracts. We offer smaller sample shipments for first-time buyers who want to test quality.</p>
+      </div>
+      <div style="background:#fff; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border-light);">
+        <div style="font-size:1.8rem; margin-bottom:12px;">🌾</div>
+        <h4 style="font-family:var(--font-display); font-size:1.2rem; color:var(--primary); margin-bottom:10px;">I'm just a small farmer — can I still sell?</h4>
+        <p style="font-size:0.88rem; color:var(--text-mid);">Absolutely. We work with farmers of all sizes. If your quality is good, we want to hear from you. We can help you scale up too if you're interested.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-icon">🍄</span> Good Mushroom</div>
+        <p>India's trusted partner for premium mushroom trading and export. Connecting farmers with global buyers.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Instagram">📷</a>
+          <a class="social-btn" href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          <a class="social-btn" href="#" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="products.html#mushrooms">Mushrooms</a></li>
+          <li><a href="products.html#extracts">Extracts</a></li>
+          <li><a href="products.html#herbs">Medicinal Herbs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">For Buyers</a></li>
+          <li><a href="contact.html#seller">For Farmers</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item"><span class="ic">✉️</span><span>hello@goodmushroom.in</span></div>
+        <div class="footer-contact-item"><span class="ic">📍</span><span>Himachal Pradesh, India</span></div>
+        <div class="footer-contact-item"><span class="ic">⏰</span><span>Mon–Sat: 10am–6pm IST</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Good Mushroom. All rights reserved.</span>
+      <span>Made with 🍄 in India</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-icon">💬</span>
+  <span class="wa-label">WhatsApp Us</span>
+</a>
+<script src="js/main.js"></script>
+<script>
+  // Auto-switch to seller tab if URL has #seller
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#seller') {
+      const sellerTab = document.getElementById('seller-tab');
+      if (sellerTab) sellerTab.click();
+      setTimeout(() => {
+        document.getElementById('contact-forms')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  });
+</script>
+</body>
+</html>
