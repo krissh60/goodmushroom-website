@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (successEl) successEl.style.display = 'block';
         }
       } catch (err) {
-        alert('Something went wrong. Please email us at hello@goodmushroom.in');
+        alert('Something went wrong. Please email us at krish@goodmushroom.in');
       }
 
       btn.textContent = originalText;
