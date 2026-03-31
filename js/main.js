@@ -95,48 +95,59 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─── LEAD FORMS (Buyer + Seller) ─── */
-  // Using Formspree — replace YOUR_FORM_ID with actual Formspree endpoint
-  // For now we handle locally and show success
+  const MAILTO_TO = 'krish@goodmushroom.in,anmol@goodmushroom.in';
+
+  function validateForm(form) {
+    let isValid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      const val = field.value.trim();
+      const empty = !val;
+      const badEmail = field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      const invalid = empty || badEmail;
+      field.classList.toggle('field-error', invalid);
+      if (invalid) isValid = false;
+    });
+    return isValid;
+  }
+
   ['buyer-form', 'seller-form'].forEach(id => {
     const form = document.getElementById(id);
     if (!form) return;
-    form.addEventListener('submit', async (e) => {
+
+    // Clear error state on input
+    form.querySelectorAll('[required]').forEach(field => {
+      field.addEventListener('input', () => field.classList.remove('field-error'));
+    });
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const successEl = form.querySelector('.success-msg');
-      const originalText = btn.textContent;
 
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        // Check if Formspree action is set
-        const action = form.action;
-        if (action && action.includes('formspree.io')) {
-          const data = new FormData(form);
-          const res = await fetch(action, {
-            method: 'POST',
-            body: data,
-            headers: { Accept: 'application/json' },
-          });
-          if (res.ok) {
-            form.reset();
-            if (successEl) successEl.style.display = 'block';
-          } else {
-            throw new Error('Server error');
-          }
-        } else {
-          // Demo mode — show success without actual send
-          await new Promise(r => setTimeout(r, 1000));
-          form.reset();
-          if (successEl) successEl.style.display = 'block';
-        }
-      } catch (err) {
-        alert('Something went wrong. Please email us at krish@goodmushroom.in');
+      if (!validateForm(form)) {
+        const firstError = form.querySelector('.field-error');
+        if (firstError) firstError.focus();
+        return;
       }
 
-      btn.textContent = originalText;
-      btn.disabled = false;
+      const subjectEl = form.querySelector('[name="_subject"]');
+      const subject = subjectEl ? subjectEl.value : 'New Enquiry — Good Mushroom';
+
+      const data = new FormData(form);
+      const bodyLines = [];
+      for (const [key, val] of data.entries()) {
+        if (key.startsWith('_') || !val) continue;
+        const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        bodyLines.push(`${label}: ${val}`);
+      }
+
+      const mailtoUrl = `mailto:${MAILTO_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+      const successEl = form.querySelector('.success-msg');
+      if (successEl) {
+        successEl.textContent = '✅ Your email client should open — please review and send the email to complete your enquiry.';
+        successEl.style.display = 'block';
+      }
+
+      window.location.href = mailtoUrl;
     });
   });
 
