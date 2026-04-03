@@ -17,6 +17,17 @@
   <meta property="og:description" content="Connecting India's mushroom farmers with global buyers. Premium quality mushrooms and herbal extracts, export-ready packaging, end-to-end documentation." />
   <meta property="og:url" content="https://goodmushroom.in/" />
   <meta property="og:site_name" content="Good Mushroom" />
+  <meta property="og:image" content="https://goodmushroom.in/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Good Mushroom — Premium Indian Mushroom Export" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Good Mushroom | Premium Mushroom Trading & Export from India" />
+  <meta name="twitter:description" content="Connecting India's mushroom farmers with global buyers. Premium quality mushrooms and herbal extracts, export-ready packaging, end-to-end documentation." />
+  <meta name="twitter:image" content="https://goodmushroom.in/og-image.jpg" />
+  <meta name="twitter:site" content="@goodmushroom" />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>" />
@@ -30,11 +41,34 @@
     "@type": "Organization",
     "name": "Good Mushroom",
     "url": "https://goodmushroom.in",
-    "description": "Premium mushroom trading and export company based in India",
+    "description": "Premium mushroom trading and export company based in India. We source, process and export Cordyceps, Shiitake, Lion's Mane, Reishi and medicinal herbs to global buyers.",
     "email": "krish@goodmushroom.in",
     "foundingDate": "2026",
     "areaServed": "Worldwide",
-    "knowsAbout": ["Cordyceps militaris", "Shiitake mushroom", "Lion's Mane mushroom", "Reishi mushroom", "Medicinal mushroom extracts", "Mushroom export"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "krish@goodmushroom.in",
+        "contactType": "sales",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "anmol@goodmushroom.in",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ],
+    "knowsAbout": ["Cordyceps militaris", "Shiitake mushroom", "Lion's Mane mushroom", "Reishi mushroom", "Oyster mushroom", "Medicinal mushroom extracts", "Mushroom export from India"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Indian Mushrooms & Herbal Extracts",
+      "url": "https://goodmushroom.in/products.html"
+    },
     "sameAs": []
   }
   </script>
@@ -791,7 +825,7 @@
   <span class="wa-icon">💬</span>
   <span class="wa-label">WhatsApp Us</span>
 </a>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 <script>
   // Show nav CTA after scrolling past hero
   const navCta = document.getElementById('navCta');
