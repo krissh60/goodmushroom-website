@@ -316,6 +316,31 @@
   <span class="wa-icon">💬</span>
   <span class="wa-label">WhatsApp Us</span>
 </a>
+
+<!-- Sticky mobile lead bar -->
+<nav class="sticky-mobile-bar" aria-label="Quick contact">
+  <a href="contact.html#buyer"  class="smb-buyer">📩 Buy</a>
+  <a href="contact.html#seller" class="smb-seller">🌾 Sell</a>
+  <a href="https://wa.me/919999999999?text=Hi%20Good%20Mushroom%2C%20I%27d%20like%20a%20buyer%20quote." target="_blank" rel="noopener" class="smb-wa">💬 WhatsApp</a>
+</nav>
+
+<!-- Exit-intent modal -->
+<div class="exit-modal" id="exitModal" role="dialog" aria-labelledby="exitTitle" aria-hidden="true">
+  <div class="exit-modal-card">
+    <button class="exit-modal-close" aria-label="Close">✕</button>
+    <div class="eyebrow">Wait — before you go</div>
+    <h3 id="exitTitle">Get our 2026 Mushroom Export Price Sheet</h3>
+    <p>Current FOB prices for Cordyceps, Shiitake, Lion's Mane, Reishi and extracts — plus MOQs, certifications, and lead times. Sent instantly.</p>
+    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+      <input type="hidden" name="_subject" value="Price Sheet Request — Good Mushroom" />
+      <input type="hidden" name="form_type" value="price_sheet" />
+      <input type="email" name="email" required placeholder="Your business email" />
+      <input type="text"  name="country" placeholder="Country (e.g. USA, UAE, Germany)" />
+      <button type="submit" class="btn btn-primary">Send me the price sheet →</button>
+      <div class="note">Free. No spam. Unsubscribe anytime.</div>
+    </form>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>

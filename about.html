@@ -214,10 +214,10 @@
     </div>
     <div class="grid-2" style="gap:56px;">
       <div class="reveal">
-        <div style="border-radius:var(--radius-lg);overflow:hidden;margin-bottom:28px;height:260px;background:linear-gradient(155deg,#061A06 0%,#0E4010 40%,#1A6820 70%,#2A8A30 100%);display:flex;align-items:center;justify-content:center;gap:24px;">
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">🏔️</span>
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">🌾</span>
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">🍄</span>
+        <div style="border-radius:var(--radius-lg);overflow:hidden;margin-bottom:28px;height:260px;background:linear-gradient(155deg,#061A06 0%,#0E4010 40%,#1A6820 70%,#2A8A30 100%) center/cover;position:relative;">
+          <img src="images/about.jpg" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/7728678/pexels-photo-7728678.jpeg?auto=compress&cs=tinysrgb&w=1200';" alt="Mushroom cultivation at our Himachal Pradesh facility" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,26,6,0.55) 100%);"></div>
+          <div style="position:absolute;left:20px;bottom:16px;color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">🏔️ Himachal Pradesh · Own Facility</div>
         </div>
         <h3 style="font-size:1.6rem; color:var(--primary); margin-bottom:24px;">Sourcing &amp; Farming</h3>
         <p style="color:var(--text-mid); margin-bottom:20px;">We grow Cordyceps militaris, Shiitake, and Lion's Mane at our own facility in Himachal Pradesh — taking advantage of the ideal high-altitude climate. We also buy from a network of verified partner farms across India, visiting each farm to assess quality and growing practices.</p>
@@ -229,10 +229,10 @@
         </div>
       </div>
       <div class="reveal reveal-delay-2">
-        <div style="border-radius:var(--radius-lg);overflow:hidden;margin-bottom:28px;height:260px;background:linear-gradient(155deg,#0A0818 0%,#181030 40%,#221848 70%,#2E2260 100%);display:flex;align-items:center;justify-content:center;gap:24px;">
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">🔬</span>
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">📦</span>
-          <span style="font-size:4rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));">✈️</span>
+        <div style="border-radius:var(--radius-lg);overflow:hidden;margin-bottom:28px;height:260px;background:linear-gradient(155deg,#0A0818 0%,#181030 40%,#221848 70%,#2E2260 100%) center/cover;position:relative;">
+          <img src="images/extract.jpg" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/4750270/pexels-photo-4750270.jpeg?auto=compress&cs=tinysrgb&w=1200';" alt="Processing and lab testing of mushroom extracts" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,8,24,0.6) 100%);"></div>
+          <div style="position:absolute;left:20px;bottom:16px;color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">🔬 NABL-Tested · Export-Ready</div>
         </div>
         <h3 style="font-size:1.6rem; color:var(--primary); margin-bottom:24px;">Processing &amp; Export</h3>
         <p style="color:var(--text-mid); margin-bottom:20px;">Fresh mushrooms are processed — cleaned, graded, dried or powdered — at our processing unit. Extracts are produced using standardised dual-extraction methods with third-party lab testing for every batch.</p>
@@ -409,6 +409,31 @@
   <span class="wa-icon">💬</span>
   <span class="wa-label">WhatsApp Us</span>
 </a>
+
+<!-- Sticky mobile lead bar -->
+<nav class="sticky-mobile-bar" aria-label="Quick contact">
+  <a href="contact.html#buyer"  class="smb-buyer">📩 Buy</a>
+  <a href="contact.html#seller" class="smb-seller">🌾 Sell</a>
+  <a href="https://wa.me/919999999999?text=Hi%20Good%20Mushroom%21" target="_blank" rel="noopener" class="smb-wa">💬 WhatsApp</a>
+</nav>
+
+<!-- Exit-intent modal -->
+<div class="exit-modal" id="exitModal" role="dialog" aria-labelledby="exitTitle" aria-hidden="true">
+  <div class="exit-modal-card">
+    <button class="exit-modal-close" aria-label="Close">✕</button>
+    <div class="eyebrow">Before you go</div>
+    <h3 id="exitTitle">Get our 2026 Mushroom Export Price Sheet</h3>
+    <p>Current FOB prices for Cordyceps, Shiitake, Lion's Mane, Reishi and extracts — plus MOQs, certifications, and lead times.</p>
+    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+      <input type="hidden" name="_subject" value="Price Sheet Request — Good Mushroom" />
+      <input type="hidden" name="form_type" value="price_sheet" />
+      <input type="email" name="email" required placeholder="Your business email" />
+      <input type="text"  name="country" placeholder="Country" />
+      <button type="submit" class="btn btn-primary">Send me the price sheet →</button>
+      <div class="note">Free. No spam. Unsubscribe anytime.</div>
+    </form>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -319,6 +319,31 @@
   <span class="wa-icon">💬</span>
   <span class="wa-label">WhatsApp Us</span>
 </a>
+
+<!-- Sticky mobile lead bar -->
+<nav class="sticky-mobile-bar" aria-label="Quick contact">
+  <a href="contact.html#seller" class="smb-seller">🌾 Register Farm</a>
+  <a href="contact.html#buyer"  class="smb-buyer">📩 Buyer?</a>
+  <a href="https://wa.me/919999999999?text=Hi%20Good%20Mushroom%2C%20I%27m%20a%20farmer%20interested%20in%20selling." target="_blank" rel="noopener" class="smb-wa">💬 WhatsApp</a>
+</nav>
+
+<!-- Exit-intent modal (farmer variant) -->
+<div class="exit-modal" id="exitModal" role="dialog" aria-labelledby="exitTitle" aria-hidden="true">
+  <div class="exit-modal-card">
+    <button class="exit-modal-close" aria-label="Close">✕</button>
+    <div class="eyebrow">Farmer? Before you go</div>
+    <h3 id="exitTitle">Get our Mushroom Farmer Onboarding Kit</h3>
+    <p>Procurement prices, quality checklist, substrate guidelines, and a sample offtake agreement — sent to your inbox.</p>
+    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+      <input type="hidden" name="_subject" value="Farmer Onboarding Kit Request — Good Mushroom" />
+      <input type="hidden" name="form_type" value="farmer_kit" />
+      <input type="email" name="email" required placeholder="Your email" />
+      <input type="text"  name="state" placeholder="State (e.g. Himachal, Karnataka)" />
+      <button type="submit" class="btn btn-primary">Send me the kit →</button>
+      <div class="note">Free. No spam. Unsubscribe anytime.</div>
+    </form>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>

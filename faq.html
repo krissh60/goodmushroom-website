@@ -280,6 +280,31 @@
   <span class="wa-icon">💬</span>
   <span class="wa-label">WhatsApp Us</span>
 </a>
+
+<!-- Sticky mobile lead bar -->
+<nav class="sticky-mobile-bar" aria-label="Quick contact">
+  <a href="contact.html#buyer"  class="smb-buyer">📩 Buy</a>
+  <a href="contact.html#seller" class="smb-seller">🌾 Sell</a>
+  <a href="https://wa.me/919999999999?text=Hi%20Good%20Mushroom%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="smb-wa">💬 WhatsApp</a>
+</nav>
+
+<!-- Exit-intent modal -->
+<div class="exit-modal" id="exitModal" role="dialog" aria-labelledby="exitTitle" aria-hidden="true">
+  <div class="exit-modal-card">
+    <button class="exit-modal-close" aria-label="Close">✕</button>
+    <div class="eyebrow">Didn't find your answer?</div>
+    <h3 id="exitTitle">Get our 2026 Export Price Sheet &amp; FAQ Doc</h3>
+    <p>Current FOB prices, MOQs, certifications, packaging options and shipping timelines — all in one PDF, sent instantly.</p>
+    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+      <input type="hidden" name="_subject" value="FAQ Doc Request — Good Mushroom" />
+      <input type="hidden" name="form_type" value="faq_doc" />
+      <input type="email" name="email" required placeholder="Your business email" />
+      <input type="text"  name="country" placeholder="Country" />
+      <button type="submit" class="btn btn-primary">Send me the PDF →</button>
+      <div class="note">Free. No spam. Unsubscribe anytime.</div>
+    </form>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>
