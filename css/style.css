@@ -1328,3 +1328,189 @@ footer {
   }
   .whatsapp-float .wa-label { display: none; }
 }
+
+/* ==========================================
+   HERO — real photo upgrade
+   ========================================== */
+.hero { background-image: url('images/hero.jpg'), url('https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=1800'); }
+.hero::before {
+  background: linear-gradient(135deg, rgba(6,26,6,0.92) 0%, rgba(10,40,20,0.80) 55%, rgba(13,31,45,0.72) 100%);
+}
+
+/* ==========================================
+   ABOUT VISUAL — real photo + overlay
+   ========================================== */
+.about-photo {
+  position: relative;
+  width: 100%; height: 100%;
+  min-height: 500px;
+  background: linear-gradient(155deg,#061A06 0%,#0E3A10 50%,#1A5A18 100%);
+  overflow: hidden;
+  border-radius: inherit;
+}
+.about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about-photo .photo-caption {
+  position: absolute; left: 24px; bottom: 24px; right: 24px;
+  color: #fff; font-family: var(--font-body);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  display: flex; align-items: center; gap: 10px;
+  z-index: 2;
+}
+.about-photo .photo-caption::before { content: ''; width: 32px; height: 2px; background: var(--accent); }
+.about-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+
+/* Product card image: photo overlay atop gradient+emoji fallback */
+.product-card-image img { z-index: 1; }
+.product-card-image .pci-icon { position: relative; z-index: 0; }
+.product-card-image::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.30) 100%);
+  z-index: 2; pointer-events: none;
+}
+
+/* ==========================================
+   STICKY MOBILE LEAD BAR
+   ========================================== */
+.sticky-mobile-bar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 995;
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap: 8px;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+}
+.sticky-mobile-bar a {
+  flex: 1;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.sticky-mobile-bar .smb-buyer  { background: var(--accent); color: #fff; }
+.sticky-mobile-bar .smb-seller { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.sticky-mobile-bar .smb-wa     { background: #25d366; color: #fff; }
+@media (max-width: 720px) {
+  .sticky-mobile-bar { display: flex; }
+  body { padding-bottom: 72px; }
+  .whatsapp-float { display: none; }
+  .back-to-top { bottom: 84px !important; right: 16px !important; }
+}
+
+/* ==========================================
+   EXIT-INTENT MODAL
+   ========================================== */
+.exit-modal {
+  position: fixed; inset: 0;
+  background: rgba(6,20,32,0.78);
+  backdrop-filter: blur(6px);
+  z-index: 9998;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+.exit-modal.open { display: flex; }
+.exit-modal-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  max-width: 520px; width: 100%;
+  padding: 44px 40px;
+  position: relative;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  animation: popIn 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.exit-modal-close {
+  position: absolute; top: 14px; right: 14px;
+  background: none; border: none;
+  font-size: 1.4rem; color: var(--text-mid);
+  cursor: pointer; width: 36px; height: 36px;
+  border-radius: 50%;
+}
+.exit-modal-close:hover { background: rgba(0,0,0,0.06); }
+.exit-modal .eyebrow { color: var(--accent); }
+.exit-modal h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem; color: var(--primary);
+  margin: 8px 0 12px; line-height: 1.2;
+}
+.exit-modal p { color: var(--text-mid); margin-bottom: 20px; font-size: 0.95rem; }
+.exit-modal form { display: flex; gap: 8px; flex-direction: column; }
+.exit-modal input {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: #fff;
+}
+.exit-modal input:focus { outline: none; border-color: var(--accent); }
+.exit-modal button { width: 100%; justify-content: center; }
+.exit-modal .note {
+  font-size: 0.75rem; color: var(--text-light);
+  text-align: center; margin-top: 12px;
+}
+@keyframes popIn { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ==========================================
+   SOCIAL PROOF STRIP
+   ========================================== */
+.proof-strip {
+  background: var(--cream-dark);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 20px 0;
+}
+.proof-strip-inner {
+  display: flex; gap: 40px; align-items: center; justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.82rem; color: var(--text-mid); font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.proof-strip-inner span.divider { color: var(--border); }
+.proof-strip-inner strong { color: var(--primary); font-family: var(--font-display); font-size: 1rem; }
+
+/* ==========================================
+   LEAD MAGNET (inline download CTA)
+   ========================================== */
+.lead-magnet {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  color: #fff;
+  display: flex; align-items: center; gap: 32px;
+  margin: 40px 0;
+  position: relative; overflow: hidden;
+}
+.lead-magnet::before {
+  content: ''; position: absolute; right: -80px; top: -80px;
+  width: 260px; height: 260px;
+  background: var(--accent);
+  border-radius: 50%; filter: blur(80px); opacity: 0.3;
+}
+.lead-magnet-icon {
+  flex-shrink: 0; width: 72px; height: 72px;
+  background: var(--accent); border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; position: relative; z-index: 1;
+}
+.lead-magnet-body { flex: 1; position: relative; z-index: 1; }
+.lead-magnet-body h3 { font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 6px; }
+.lead-magnet-body p  { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin: 0; }
+.lead-magnet .btn { position: relative; z-index: 1; flex-shrink: 0; }
+@media (max-width: 680px) {
+  .lead-magnet { flex-direction: column; text-align: center; padding: 32px 24px; gap: 20px; }
+}

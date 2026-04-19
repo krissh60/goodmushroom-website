@@ -237,4 +237,67 @@ document.addEventListener('DOMContentLoaded', () => {
     track.innerHTML += clone;
   }
 
+  /* ─── CONTACT TAB FROM URL HASH (so #seller links open the seller form) ─── */
+  function activateTabFromHash() {
+    const hash = window.location.hash.replace('#','');
+    if (!hash) return;
+    const target = hash === 'seller' ? 'seller-panel'
+                 : hash === 'buyer'  ? 'buyer-panel'
+                 : null;
+    if (!target) return;
+    const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
+    if (btn) btn.click();
+  }
+  activateTabFromHash();
+  window.addEventListener('hashchange', activateTabFromHash);
+
+  /* ─── EXIT-INTENT MODAL ─── */
+  const exitModal = document.getElementById('exitModal');
+  if (exitModal) {
+    const KEY = 'gm_exit_shown';
+    const alreadyShown = sessionStorage.getItem(KEY);
+
+    const openModal = () => {
+      if (sessionStorage.getItem(KEY)) return;
+      exitModal.classList.add('open');
+      exitModal.setAttribute('aria-hidden','false');
+      sessionStorage.setItem(KEY, '1');
+    };
+    const closeModal = () => {
+      exitModal.classList.remove('open');
+      exitModal.setAttribute('aria-hidden','true');
+    };
+
+    // Desktop: fire when cursor leaves the viewport top
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 0 && !alreadyShown) openModal();
+    });
+
+    // Mobile: fire after 25s of scrolling activity (exit intent doesn't exist on mobile)
+    let scrolled = 0;
+    const onScrollTrigger = () => { scrolled++; if (scrolled > 15 && window.scrollY > 1200) { openModal(); window.removeEventListener('scroll', onScrollTrigger); } };
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      setTimeout(() => window.addEventListener('scroll', onScrollTrigger, { passive: true }), 25000);
+    }
+
+    // Close handlers
+    exitModal.querySelector('.exit-modal-close').addEventListener('click', closeModal);
+    exitModal.addEventListener('click', (e) => { if (e.target === exitModal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Submit handler (same mailto pattern)
+    const exitForm = document.getElementById('exitForm');
+    if (exitForm) {
+      exitForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(exitForm);
+        const lines = [];
+        for (const [k,v] of data.entries()) { if (!k.startsWith('_') && v) lines.push(`${k}: ${v}`); }
+        const subj = 'Price Sheet Request — Good Mushroom';
+        window.location.href = `mailto:krish@goodmushroom.in,anmol@goodmushroom.in?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(lines.join('\n'))}`;
+        closeModal();
+      });
+    }
+  }
+
 });
