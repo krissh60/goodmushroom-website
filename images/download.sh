@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 
 # Hero / About visual
 curl -sL -o hero.jpg         "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=1800"
-curl -sL -o about.jpg        "https://images.pexels.com/photos/1148399/pexels-photo-1148399.jpeg?auto=compress&cs=tinysrgb&w=1200"
+curl -sL -o about.jpg        "https://images.pexels.com/photos/7728678/pexels-photo-7728678.jpeg?auto=compress&cs=tinysrgb&w=1200"
 
 # Products (800x800 square crops)
 curl -sL -o cordyceps.jpg    "https://images.pexels.com/photos/4750274/pexels-photo-4750274.jpeg?auto=compress&cs=tinysrgb&w=800"
