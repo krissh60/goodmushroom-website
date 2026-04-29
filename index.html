@@ -88,6 +88,7 @@
       <li><a href="products.html">Products</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="buyers.html">For Buyers</a></li>
+      <li><a href="exports.html">Export Markets</a></li>
       <li><a href="farmers.html">For Farmers</a></li>
       <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -106,6 +107,7 @@
   <a href="products.html">Products</a>
   <a href="about.html">About Us</a>
   <a href="buyers.html">For Buyers</a>
+  <a href="exports.html">Export Markets</a>
   <a href="farmers.html">For Farmers</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
@@ -372,11 +374,11 @@
     </div>
 
     <!-- Inline lead magnet -->
-    <div class="lead-magnet reveal" aria-label="Download price sheet">
+    <div class="lead-magnet reveal" aria-label="Download export spec sheet">
       <div class="lead-magnet-icon">📑</div>
       <div class="lead-magnet-body">
-        <h3>Get the 2026 Export Price Sheet</h3>
-        <p>Current FOB prices per kg, MOQs, and certifications — emailed instantly.</p>
+        <h3>Get the 2026 Export Spec Sheet</h3>
+        <p>Product formats, MOQs, certifications, and export documentation checklist — emailed instantly.</p>
       </div>
       <a href="#" class="btn btn-primary" onclick="document.getElementById('exitModal').classList.add('open');return false;">Download free →</a>
     </div>
@@ -826,7 +828,8 @@
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="buyers.html">For Buyers</a></li>
-          <li><a href="farmers.html">For Farmers</a></li>
+          <li><a href="exports.html">Export Markets</a></li>
+      <li><a href="farmers.html">For Farmers</a></li>
           <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -879,15 +882,15 @@
   <div class="exit-modal-card">
     <button class="exit-modal-close" aria-label="Close">✕</button>
     <div class="eyebrow">Wait — before you go</div>
-    <h3 id="exitTitle">Get our 2026 Mushroom Export Price Sheet</h3>
-    <p>Current FOB prices for Cordyceps, Shiitake, Lion's Mane, Reishi and extracts — plus MOQs, certifications, and lead times. Sent instantly.</p>
+    <h3 id="exitTitle">Get our 2026 Mushroom Export Spec Sheet</h3>
+    <p>Product formats, MOQs, certifications, packaging options, and lead times. Sent instantly.</p>
     <form id="exitForm" action="/api/contact.php" method="POST" novalidate>
               <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
-      <input type="hidden" name="_subject" value="Price Sheet Request — Good Mushroom" />
-      <input type="hidden" name="form_type" value="price_sheet" />
+      <input type="hidden" name="_subject" value="Export Spec Sheet Request — Good Mushroom" />
+      <input type="hidden" name="form_type" value="spec_sheet" />
       <input type="email" name="email" required placeholder="Your business email" />
       <input type="text"  name="country" placeholder="Country (e.g. USA, UAE, Germany)" />
-      <button type="submit" class="btn btn-primary">Send me the price sheet →</button>
+      <button type="submit" class="btn btn-primary">Send me the spec sheet →</button>
       <div class="note">Free. No spam. Unsubscribe anytime.</div>
     </form>
   </div>

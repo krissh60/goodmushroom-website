@@ -314,8 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
       exitForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const fd = new FormData(exitForm);
-        if (!fd.get('form_type')) fd.set('form_type', 'price_sheet');
-        if (!fd.get('_subject')) fd.set('_subject', 'Price Sheet Request — Good Mushroom');
+        if (!fd.get('form_type')) fd.set('form_type', 'spec_sheet');
+        if (!fd.get('_subject')) fd.set('_subject', 'Export Spec Sheet Request — Good Mushroom');
         try {
           const res = await fetch('/api/contact.php', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
           const j = res.ok ? await res.json() : { ok: false };

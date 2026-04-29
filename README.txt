@@ -8,6 +8,8 @@ Static marketing and lead-generation site for https://goodmushroom.in.
 index.html              Homepage
 products.html           Product catalogue
 products/*.html         Product-specific buy/sell landing pages
+exports.html            Export market hub
+exports/*.html          Country-specific export landing pages
 buyers.html             Buyer information page
 farmers.html            Farmer/seller information page
 contact.html            Buyer and seller lead forms
@@ -63,5 +65,5 @@ Before reloading Nginx on the VPS, confirm the PHP-FPM socket in
 ## SEO after deploy
 
 Submit `https://goodmushroom.in/sitemap.xml` in Google Search Console, then
-request indexing for the new product pages plus `/buyers.html`, `/faq.html`,
-`/about.html`, and `/contact.html`.
+request indexing for the product pages, `/exports.html`, the country export
+pages, `/buyers.html`, `/faq.html`, `/about.html`, and `/contact.html`.

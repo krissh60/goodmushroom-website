@@ -1,7 +1,7 @@
 <?php
 /**
  * Good Mushroom — Contact form endpoint.
- * Handles buyer + seller + price-sheet enquiries from any page on the site.
+ * Handles buyer + seller + export spec-sheet enquiries from any page on the site.
  * Reads recipient + SMTP creds from /var/www/goodmushroom/api/.env
  */
 
@@ -95,7 +95,7 @@ if ($form_type === 'seller') {
         exit;
     }
 } else {
-    // buyer or price_sheet
+    // buyer or spec_sheet
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400);
         echo json_encode(['ok' => false, 'error' => 'Valid email required']);
@@ -111,7 +111,7 @@ if ($form_type === 'seller') {
 /* ---- Build email body ---- */
 $subject_default = match ($form_type) {
     'seller'      => 'New Farmer/Seller Registration — Good Mushroom',
-    'price_sheet' => 'Price Sheet Request — Good Mushroom',
+    'spec_sheet'  => 'Export Spec Sheet Request — Good Mushroom',
     default       => 'New Buyer Enquiry — Good Mushroom',
 };
 $subject = clean((string)($_POST['_subject'] ?? $subject_default), 200);
