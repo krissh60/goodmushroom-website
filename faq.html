@@ -295,7 +295,8 @@
     <div class="eyebrow">Didn't find your answer?</div>
     <h3 id="exitTitle">Get our 2026 Export Price Sheet &amp; FAQ Doc</h3>
     <p>Current FOB prices, MOQs, certifications, packaging options and shipping timelines — all in one PDF, sent instantly.</p>
-    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+    <form id="exitForm" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
       <input type="hidden" name="_subject" value="FAQ Doc Request — Good Mushroom" />
       <input type="hidden" name="form_type" value="faq_doc" />
       <input type="email" name="email" required placeholder="Your business email" />

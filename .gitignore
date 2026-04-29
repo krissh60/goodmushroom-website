@@ -1,0 +1,14 @@
+# Backend secrets (real .env lives only on VPS)
+api/.env
+api/logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Local dev
+node_modules/
+*.log

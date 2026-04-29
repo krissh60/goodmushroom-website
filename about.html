@@ -424,7 +424,8 @@
     <div class="eyebrow">Before you go</div>
     <h3 id="exitTitle">Get our 2026 Mushroom Export Price Sheet</h3>
     <p>Current FOB prices for Cordyceps, Shiitake, Lion's Mane, Reishi and extracts — plus MOQs, certifications, and lead times.</p>
-    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+    <form id="exitForm" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
       <input type="hidden" name="_subject" value="Price Sheet Request — Good Mushroom" />
       <input type="hidden" name="form_type" value="price_sheet" />
       <input type="email" name="email" required placeholder="Your business email" />

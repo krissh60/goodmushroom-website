@@ -254,7 +254,7 @@
     </div>
 
     <div class="grid-4">
-      <div class="product-card reveal" data-theme="cordyceps">
+      <a class="product-card reveal" data-theme="cordyceps" href="products/cordyceps.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/cordyceps.jpg" alt="Cordyceps militaris mushrooms" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🟠</span>
@@ -266,9 +266,9 @@
           <span class="product-tag">Dried</span>
           <span class="product-tag">Extract</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-1" data-theme="shiitake">
+      <a class="product-card reveal reveal-delay-1" data-theme="shiitake" href="products/shiitake.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/shiitake.jpg" alt="Shiitake mushrooms" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🍄</span>
@@ -280,9 +280,9 @@
           <span class="product-tag">Dried</span>
           <span class="product-tag">Powder</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-2" data-theme="lions-mane">
+      <a class="product-card reveal reveal-delay-2" data-theme="lions-mane" href="products/lions-mane.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/lions-mane.jpg" alt="Lion's Mane mushroom" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🦁</span>
@@ -294,9 +294,9 @@
           <span class="product-tag">Extract</span>
           <span class="product-tag">Powder</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-3" data-theme="oyster">
+      <a class="product-card reveal reveal-delay-3" data-theme="oyster" href="products/oyster.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/oyster.jpg" alt="Oyster mushrooms cluster" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🌊</span>
@@ -308,9 +308,9 @@
           <span class="product-tag">Dried</span>
           <span class="product-tag">Bulk</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal" data-theme="reishi">
+      <a class="product-card reveal" data-theme="reishi" href="products/reishi.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/reishi.jpg" alt="Reishi Ganoderma mushroom" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🔴</span>
@@ -322,9 +322,9 @@
           <span class="product-tag">Extract</span>
           <span class="product-tag">Spore Oil</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-1" data-theme="button">
+      <a class="product-card reveal reveal-delay-1" data-theme="button" href="products/button.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/button.jpg" alt="Button and crimini mushrooms" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">⚪</span>
@@ -336,9 +336,9 @@
           <span class="product-tag">Dried</span>
           <span class="product-tag">Canned</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-2" data-theme="extract">
+      <a class="product-card reveal reveal-delay-2" data-theme="extract" href="products/extracts-dual.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/extract.jpg" alt="Mushroom extracts powder and oils" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">💧</span>
@@ -350,9 +350,9 @@
           <span class="product-tag">Powder</span>
           <span class="product-tag">Capsule-Ready</span>
         </div>
-      </div>
+      </a>
 
-      <div class="product-card reveal reveal-delay-3" data-theme="herbs">
+      <a class="product-card reveal reveal-delay-3" data-theme="herbs" href="products/ashwagandha.html" style="text-decoration:none; color:inherit; display:block;">
         <div class="product-card-image">
           <img src="images/herbs.jpg" alt="Ayurvedic medicinal herbs" loading="lazy" decoding="async" onerror="this.style.display='none'" />
           <span class="pci-icon">🌿</span>
@@ -364,7 +364,7 @@
           <span class="product-tag">Extract</span>
           <span class="product-tag">Powder</span>
         </div>
-      </div>
+      </a>
     </div>
 
     <div style="text-align:center; margin-top:48px;" class="reveal">
@@ -650,7 +650,8 @@
     <!-- BUYER FORM -->
     <div class="form-panel active" id="buyer-panel">
       <div class="contact-form-wrap">
-        <form id="buyer-form" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+        <form id="buyer-form" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
           <input type="hidden" name="_subject" value="New Buyer Enquiry — Good Mushroom" />
           <input type="hidden" name="form_type" value="buyer" />
           <div class="form-row">
@@ -709,7 +710,8 @@
     <!-- SELLER FORM -->
     <div class="form-panel" id="seller-panel">
       <div class="contact-form-wrap">
-        <form id="seller-form" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+        <form id="seller-form" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
           <input type="hidden" name="_subject" value="New Seller Registration — Good Mushroom" />
           <input type="hidden" name="form_type" value="seller" />
           <div class="form-row">
@@ -809,13 +811,13 @@
       <div class="footer-col">
         <h5>Products</h5>
         <ul>
-          <li><a href="products.html#cordyceps">Cordyceps Militaris</a></li>
-          <li><a href="products.html#shiitake">Shiitake</a></li>
-          <li><a href="products.html#lions-mane">Lion's Mane</a></li>
-          <li><a href="products.html#oyster">Oyster Mushrooms</a></li>
-          <li><a href="products.html#reishi">Reishi / Ganoderma</a></li>
-          <li><a href="products.html#extracts">Extracts & Oils</a></li>
-          <li><a href="products.html#herbs">Medicinal Herbs</a></li>
+          <li><a href="products/cordyceps.html">Cordyceps Militaris</a></li>
+          <li><a href="products/shiitake.html">Shiitake</a></li>
+          <li><a href="products/lions-mane.html">Lion's Mane</a></li>
+          <li><a href="products/oyster.html">Oyster Mushrooms</a></li>
+          <li><a href="products/reishi.html">Reishi / Ganoderma</a></li>
+          <li><a href="products/extracts-dual.html">Extracts & Oils</a></li>
+          <li><a href="products/ashwagandha.html">Medicinal Herbs</a></li>
         </ul>
       </div>
 
@@ -879,7 +881,8 @@
     <div class="eyebrow">Wait — before you go</div>
     <h3 id="exitTitle">Get our 2026 Mushroom Export Price Sheet</h3>
     <p>Current FOB prices for Cordyceps, Shiitake, Lion's Mane, Reishi and extracts — plus MOQs, certifications, and lead times. Sent instantly.</p>
-    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+    <form id="exitForm" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
       <input type="hidden" name="_subject" value="Price Sheet Request — Good Mushroom" />
       <input type="hidden" name="form_type" value="price_sheet" />
       <input type="email" name="email" required placeholder="Your business email" />

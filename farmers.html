@@ -334,7 +334,8 @@
     <div class="eyebrow">Farmer? Before you go</div>
     <h3 id="exitTitle">Get our Mushroom Farmer Onboarding Kit</h3>
     <p>Procurement prices, quality checklist, substrate guidelines, and a sample offtake agreement — sent to your inbox.</p>
-    <form id="exitForm" action="mailto:krish@goodmushroom.in,anmol@goodmushroom.in" method="POST" enctype="text/plain" novalidate>
+    <form id="exitForm" action="/api/contact.php" method="POST" novalidate>
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
       <input type="hidden" name="_subject" value="Farmer Onboarding Kit Request — Good Mushroom" />
       <input type="hidden" name="form_type" value="farmer_kit" />
       <input type="email" name="email" required placeholder="Your email" />

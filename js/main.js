@@ -94,8 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ─── LEAD FORMS (Buyer + Seller) ─── */
-  const MAILTO_TO = 'krish@goodmushroom.in,anmol@goodmushroom.in';
+  /* ─── LEAD FORMS (Buyer + Seller) — POST to /api/contact.php ─── */
+  const API_ENDPOINT = '/api/contact.php';
+  const MAILTO_FALLBACK = 'krish@goodmushroom.in,anmol@goodmushroom.in';
 
   function validateForm(form) {
     let isValid = true;
@@ -110,44 +111,66 @@ document.addEventListener('DOMContentLoaded', () => {
     return isValid;
   }
 
+  function mailtoFallback(form) {
+    const subjectEl = form.querySelector('[name="_subject"]');
+    const subject = subjectEl ? subjectEl.value : 'New Enquiry — Good Mushroom';
+    const data = new FormData(form);
+    const lines = [];
+    for (const [k, v] of data.entries()) {
+      if (k.startsWith('_') || k === 'website' || !v) continue;
+      const label = k.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      lines.push(`${label}: ${v}`);
+    }
+    window.location.href = `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  }
+
   ['buyer-form', 'seller-form'].forEach(id => {
-    const form = document.getElementById(id);
-    if (!form) return;
+    document.querySelectorAll('#' + id).forEach(form => {
+      form.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('input', () => field.classList.remove('field-error'));
+      });
 
-    // Clear error state on input
-    form.querySelectorAll('[required]').forEach(field => {
-      field.addEventListener('input', () => field.classList.remove('field-error'));
-    });
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!validateForm(form)) {
+          const firstError = form.querySelector('.field-error');
+          if (firstError) firstError.focus();
+          return;
+        }
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
+        const successEl = form.querySelector('.success-msg');
 
-      if (!validateForm(form)) {
-        const firstError = form.querySelector('.field-error');
-        if (firstError) firstError.focus();
-        return;
-      }
+        try {
+          const res = await fetch(API_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          const ct = res.headers.get('content-type') || '';
+          const json = ct.includes('application/json') ? await res.json() : { ok: false, error: 'Bad response' };
 
-      const subjectEl = form.querySelector('[name="_subject"]');
-      const subject = subjectEl ? subjectEl.value : 'New Enquiry — Good Mushroom';
-
-      const data = new FormData(form);
-      const bodyLines = [];
-      for (const [key, val] of data.entries()) {
-        if (key.startsWith('_') || !val) continue;
-        const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        bodyLines.push(`${label}: ${val}`);
-      }
-
-      const mailtoUrl = `mailto:${MAILTO_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-
-      const successEl = form.querySelector('.success-msg');
-      if (successEl) {
-        successEl.textContent = '✅ Your email client should open — please review and send the email to complete your enquiry.';
-        successEl.style.display = 'block';
-      }
-
-      window.location.href = mailtoUrl;
+          if (res.ok && json.ok) {
+            if (successEl) {
+              successEl.textContent = form.id === 'buyer-form'
+                ? '✅ Thank you! We\'ve received your enquiry and will be in touch within 24 hours.'
+                : '✅ Thank you for registering! Our sourcing team will contact you within 48 hours.';
+              successEl.style.display = 'block';
+            }
+            form.reset();
+            successEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error(json.error || 'Submission failed');
+          }
+        } catch (err) {
+          console.warn('Form submit failed, falling back to mailto:', err);
+          if (successEl) {
+            successEl.textContent = '⚠️ Connection issue — opening your email client as a backup. Please review and send.';
+            successEl.style.display = 'block';
+          }
+          mailtoFallback(form);
+        } finally {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+        }
+      });
     });
   });
 
@@ -285,16 +308,24 @@ document.addEventListener('DOMContentLoaded', () => {
     exitModal.addEventListener('click', (e) => { if (e.target === exitModal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-    // Submit handler (same mailto pattern)
+    // Exit form posts to /api/contact.php (with mailto fallback on failure)
     const exitForm = document.getElementById('exitForm');
     if (exitForm) {
-      exitForm.addEventListener('submit', (e) => {
+      exitForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const data = new FormData(exitForm);
-        const lines = [];
-        for (const [k,v] of data.entries()) { if (!k.startsWith('_') && v) lines.push(`${k}: ${v}`); }
-        const subj = 'Price Sheet Request — Good Mushroom';
-        window.location.href = `mailto:krish@goodmushroom.in,anmol@goodmushroom.in?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(lines.join('\n'))}`;
+        const fd = new FormData(exitForm);
+        if (!fd.get('form_type')) fd.set('form_type', 'price_sheet');
+        if (!fd.get('_subject')) fd.set('_subject', 'Price Sheet Request — Good Mushroom');
+        try {
+          const res = await fetch('/api/contact.php', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+          const j = res.ok ? await res.json() : { ok: false };
+          if (!j.ok) throw new Error('post failed');
+        } catch {
+          const subject = fd.get('_subject') || 'Website Enquiry — Good Mushroom';
+          const lines = [];
+          for (const [k,v] of fd.entries()) { if (!k.startsWith('_') && k !== 'website' && v) lines.push(`${k}: ${v}`); }
+          window.location.href = `mailto:krish@goodmushroom.in,anmol@goodmushroom.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+        }
         closeModal();
       });
     }

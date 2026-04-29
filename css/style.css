@@ -1332,7 +1332,7 @@ footer {
 /* ==========================================
    HERO — real photo upgrade
    ========================================== */
-.hero { background-image: url('images/hero.jpg'), url('https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=1800'); }
+.hero { background-image: url('../images/hero.jpg'), url('https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=1800'); }
 .hero::before {
   background: linear-gradient(135deg, rgba(6,26,6,0.92) 0%, rgba(10,40,20,0.80) 55%, rgba(13,31,45,0.72) 100%);
 }
