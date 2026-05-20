@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ─── SCROLL REVEAL ─── */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ─── SCROLL REVEAL (covers .reveal and .reveal-stagger) ─── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
   if (revealEls.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(el.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
     revealEls.forEach(el => observer.observe(el));
   }
