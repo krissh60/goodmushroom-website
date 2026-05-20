@@ -109,81 +109,12 @@
 
   <link rel="icon" type="image/png" href="../images/favicon.png" />
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .product-hero {
-      position: relative;
-      padding: 140px 0 80px;
-      background: linear-gradient(135deg, rgba(15,42,20,0.92), rgba(22,59,30,0.85)), url('../images/shiitake.jpg') center/cover no-repeat;
-      color: #fff;
-      overflow: hidden;
-    }
-    .product-hero .breadcrumb { color: rgba(255,255,255,0.6); margin-bottom: 16px; font-size: 0.9rem; }
-    .product-hero .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
-    .product-hero .breadcrumb .sep { margin: 0 8px; }
-    .product-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      max-width: 18ch;
-    }
-    .product-hero p.tagline {
-      font-size: 1.05rem;
-      max-width: 60ch;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 28px;
-    }
-    .product-hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .product-section { padding: 88px 0; }
-    .product-section.dark { background: var(--bg-dark); color: #fff; }
-    .product-section.cream { background: var(--cream); }
-    .product-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: flex-start;
-    }
-    @media (max-width: 900px) { .product-grid-2 { grid-template-columns: 1fr; gap: 36px; } }
-    .spec-list { display: flex; flex-direction: column; gap: 0; margin: 24px 0 8px; }
-    .spec-row {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border-light);
-      font-size: 0.94rem;
-    }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-key { color: var(--text-mid); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; }
-    .spec-val { color: var(--text); line-height: 1.55; }
-    .product-section.dark .spec-row { border-bottom-color: rgba(255,255,255,0.08); }
-    .product-section.dark .spec-key { color: rgba(255,255,255,0.55); }
-    .product-section.dark .spec-val { color: rgba(255,255,255,0.92); }
-    .price-callout {
-      background: rgba(217,107,59,0.08);
-      border: 1px solid rgba(217,107,59,0.25);
-      border-radius: var(--radius-lg);
-      padding: 22px 26px;
-      margin-top: 28px;
-      font-size: 0.92rem;
-      color: var(--text);
-    }
-    .product-section.dark .price-callout {
-      background: rgba(217,107,59,0.12);
-      color: rgba(255,255,255,0.92);
-    }
-    @media (max-width: 600px) {
-      .product-hero { padding: 110px 0 64px; }
-      .product-section { padding: 64px 0; }
-      .spec-row { grid-template-columns: 1fr; gap: 4px; }
-    }
-  </style>
 </head>
 <body>
 
 <nav class="navbar" role="navigation">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><img class="logo-icon" src="../images/logo-mark.png" alt="Good Mushroom logo" width="40" height="40" /> Good Mushroom</a>
+    <a href="../index.html" class="nav-logo" aria-label="Good Mushroom — home"><img src="../images/logo-nav.png" alt="Good Mushroom" width="172" height="48" /></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../products.html" class="active">Products</a></li>
@@ -229,7 +160,7 @@
 </section>
 
 <!-- BUY IN BULK -->
-<section class="product-section cream" id="buy">
+<section class="product-section soft" id="buy">
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow">For Buyers & Importers</div>
@@ -311,7 +242,7 @@
 </section>
 
 <!-- SELL TO US -->
-<section class="product-section dark" id="sell">
+<section class="product-section deep" id="sell">
   <div class="container">
     <div class="section-header reveal" style="color:#fff;">
       <div class="eyebrow" style="color:var(--accent-light);">For Farmers & Suppliers</div>
@@ -389,7 +320,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="product-section cream">
+<section class="product-section soft">
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow">Common Questions</div>
@@ -422,7 +353,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><img class="logo-icon" src="../images/logo-mark.png" alt="Good Mushroom logo" width="40" height="40" /> Good Mushroom</div>
+        <div class="logo"><img src="../images/logo-white.png" alt="Good Mushroom" width="180" height="50" /></div>
         <p>India's trusted partner for premium mushroom trading and export. Connecting farmers with global buyers.</p>
         <div class="footer-social">
           <a class="social-btn" href="#" aria-label="Instagram">📷</a>
