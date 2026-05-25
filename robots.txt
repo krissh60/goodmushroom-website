@@ -1,4 +1,19 @@
+# ============================================================
+#   robots.txt for goodmushroom.in
+#   Good Mushroom Private Limited
+#   Functional mushroom ingredient sourcing & supply
+# ============================================================
+
+# Allow all well-behaved crawlers to access all public content.
 User-agent: *
 Allow: /
 
+# Disallow internal/utility paths from being indexed.
+Disallow: /api/
+Disallow: /deploy/
+
+# Canonical sitemap location
 Sitemap: https://goodmushroom.in/sitemap.xml
+
+# Canonical host preference
+Host: goodmushroom.in
