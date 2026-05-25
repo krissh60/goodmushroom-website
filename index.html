@@ -39,9 +39,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
-  <link rel="preload" as="image" href="images/cordyceps.jpg" />
+  <link rel="preload" as="image" href="images/cordyceps.webp" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="css/style.css" />
 
   <script type="application/ld+json">
@@ -113,7 +114,7 @@
     <a href="/" class="nav-logo" aria-label="Good Mushroom — home">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </a>
     <ul class="nav-links" role="list">
       <li><a href="products.html">Products</a></li>
@@ -142,7 +143,7 @@
     <span class="nav-logo">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </span>
     <button class="mobile-menu-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -191,7 +192,7 @@
       </div>
 
       <div class="hero-art reveal">
-        <img src="images/cordyceps.jpg" alt="Cordyceps militaris fruiting body — export-grade functional mushroom ingredient" loading="eager" />
+        <picture><source srcset="images/cordyceps.webp" type="image/webp"><img src="images/cordyceps.jpg" alt="Cordyceps militaris fruiting body — export-grade functional mushroom ingredient" loading="eager" fetchpriority="high"  width="900" height="884" /></picture>
         <div class="hero-art-overlay" aria-hidden="true"></div>
         <span class="hero-art-tag"><span class="dot"></span>In supply</span>
         <div class="hero-art-caption">
@@ -354,7 +355,7 @@
     <div class="cat-grid reveal-stagger">
       <a href="products/cordyceps.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/cordyceps.jpg" alt="Cordyceps militaris bulk ingredient — dried fruiting body and extract" loading="lazy" />
+          <picture><source srcset="images/cordyceps.webp" type="image/webp"><img src="images/cordyceps.jpg" alt="Cordyceps militaris bulk ingredient — dried fruiting body and extract" loading="lazy"  width="900" height="884" /></picture>
           <span class="cat-card-tag">10 kg MOQ</span>
         </div>
         <div class="cat-card-body">
@@ -366,7 +367,7 @@
 
       <a href="products/shiitake.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/shiitake.jpg" alt="Shiitake mushroom bulk supply — dried, sliced and powder grades" loading="lazy" />
+          <picture><source srcset="images/shiitake.webp" type="image/webp"><img src="images/shiitake.jpg" alt="Shiitake mushroom bulk supply — dried, sliced and powder grades" loading="lazy"  width="1200" height="848" /></picture>
           <span class="cat-card-tag">Donko · Koshin</span>
         </div>
         <div class="cat-card-body">
@@ -378,7 +379,7 @@
 
       <a href="products/lions-mane.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/lions-mane.jpg" alt="Lion's Mane (Hericium erinaceus) bulk ingredient for nootropic supplements" loading="lazy" />
+          <picture><source srcset="images/lions-mane.webp" type="image/webp"><img src="images/lions-mane.jpg" alt="Lion's Mane (Hericium erinaceus) bulk ingredient for nootropic supplements" loading="lazy"  width="1200" height="675" /></picture>
           <span class="cat-card-tag">Extract 8:1</span>
         </div>
         <div class="cat-card-body">
@@ -390,7 +391,7 @@
 
       <a href="products/oyster.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/oyster.jpg" alt="Oyster mushroom (Pleurotus) bulk supply — pearl, pink, blue and king" loading="lazy" />
+          <picture><source srcset="images/oyster.webp" type="image/webp"><img src="images/oyster.jpg" alt="Oyster mushroom (Pleurotus) bulk supply — pearl, pink, blue and king" loading="lazy"  width="1200" height="800" /></picture>
           <span class="cat-card-tag">Dried &amp; powder</span>
         </div>
         <div class="cat-card-body">
@@ -402,7 +403,7 @@
 
       <a href="products/reishi.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/reishi.jpg" alt="Reishi (Ganoderma lucidum) extract and CO₂ spore oil — bulk supply" loading="lazy" />
+          <picture><source srcset="images/reishi.webp" type="image/webp"><img src="images/reishi.jpg" alt="Reishi (Ganoderma lucidum) extract and CO₂ spore oil — bulk supply" loading="lazy"  width="1200" height="773" /></picture>
           <span class="cat-card-tag">Triterpenes &gt;35%</span>
         </div>
         <div class="cat-card-body">
@@ -414,7 +415,7 @@
 
       <a href="products/button.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/button.jpg" alt="Button, crimini and portobello mushrooms — bulk ingredient supply from India" loading="lazy" />
+          <picture><source srcset="images/button.webp" type="image/webp"><img src="images/button.jpg" alt="Button, crimini and portobello mushrooms — bulk ingredient supply from India" loading="lazy"  width="1200" height="1200" /></picture>
           <span class="cat-card-tag">Dried · Brined</span>
         </div>
         <div class="cat-card-body">
@@ -426,7 +427,7 @@
 
       <a href="products/extracts-dual.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/extract.jpg" alt="Dual-extract mushroom powder — supplement-ready bulk ingredient" loading="lazy" />
+          <picture><source srcset="images/extract.webp" type="image/webp"><img src="images/extract.jpg" alt="Dual-extract mushroom powder — supplement-ready bulk ingredient" loading="lazy"  width="1000" height="667" /></picture>
           <span class="cat-card-tag">OEM / white-label</span>
         </div>
         <div class="cat-card-body">
@@ -438,7 +439,7 @@
 
       <a href="products/ashwagandha.html" class="cat-card">
         <div class="cat-card-image">
-          <img src="images/herbs.jpg" alt="Ashwagandha, Tulsi and Brahmi — AYUSH-licensed Ayurvedic herb supply" loading="lazy" />
+          <picture><source srcset="images/herbs.webp" type="image/webp"><img src="images/herbs.jpg" alt="Ashwagandha, Tulsi and Brahmi — AYUSH-licensed Ayurvedic herb supply" loading="lazy"  width="1000" height="667" /></picture>
           <span class="cat-card-tag">AYUSH facility</span>
         </div>
         <div class="cat-card-body">
@@ -503,7 +504,7 @@
   <div class="wrap">
     <div class="editorial reveal">
       <div class="editorial-image">
-        <img src="images/about.jpg" alt="Good Mushroom — batch quality verification at intake" />
+        <picture><source srcset="images/about.webp" type="image/webp"><img src="images/about.jpg" alt="Good Mushroom — batch quality verification at intake"  width="1400" height="933" /></picture>
         <span class="editorial-image-caption">Batch QC · Solan, HP</span>
       </div>
       <div class="editorial-copy">
@@ -548,7 +549,7 @@
         </div>
       </div>
       <div class="editorial-image">
-        <img src="images/hero.jpg" alt="Verified mushroom growing partner — Good Mushroom supply partnership" />
+        <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.jpg" alt="Verified mushroom growing partner — Good Mushroom supply partnership"  width="1800" height="1200" /></picture>
         <span class="editorial-image-caption">Supply partner · Karnataka</span>
       </div>
     </div>
@@ -580,7 +581,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img" />
+        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img"  width="802" height="225" />
         <h3>Good <em>Mushroom</em></h3>
         <p>India-based functional mushroom sourcing &amp; supply company. Verified procurement, quality control and documentation under one accountable supplier.</p>
       </div>

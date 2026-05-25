@@ -38,7 +38,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">
 {
@@ -73,7 +74,7 @@
     <a href="/" class="nav-logo" aria-label="Good Mushroom — home">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </a>
     <ul class="nav-links" role="list">
       <li><a href="products.html">Products</a></li>
@@ -101,7 +102,7 @@
     <span class="nav-logo">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </span>
     <button class="mobile-menu-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -137,7 +138,7 @@
         <p class="lede"><strong>Good Mushroom Private Limited</strong> is a small, focused India-based functional mushroom sourcing &amp; supply company — incorporated in 2026 and headquartered in Himachal Pradesh. We source from verified growers, run NABL labs on every batch, and ship under our own documentation as a single accountable supplier.</p>
       </div>
       <div class="page-hero-art reveal">
-        <img src="images/about.jpg" alt="Mushroom farm in Himachal Pradesh" loading="eager" />
+        <picture><source srcset="images/about.webp" type="image/webp"><img src="images/about.jpg" alt="Mushroom farm in Himachal Pradesh" loading="eager"  width="1400" height="933" /></picture>
         <span class="page-hero-art-caption">Farm visit · Solan, HP</span>
       </div>
     </div>
@@ -148,7 +149,7 @@
   <div class="wrap">
     <div class="editorial reveal">
       <div class="editorial-image">
-        <img src="images/cordyceps.jpg" alt="Cordyceps batch with COA" />
+        <picture><source srcset="images/cordyceps.webp" type="image/webp"><img src="images/cordyceps.jpg" alt="Cordyceps batch with COA"  width="900" height="884" /></picture>
         <span class="editorial-image-caption">Batch QC · cordyceps</span>
       </div>
       <div class="editorial-copy">
@@ -217,7 +218,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img" />
+        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img"  width="802" height="225" />
         <h3>Good <em>Mushroom</em></h3>
         <p>India-based functional mushroom sourcing & supply company. Verified procurement, quality control and documentation under one accountable supplier.</p>
       </div>

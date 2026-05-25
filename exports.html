@@ -38,7 +38,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">
 {
@@ -64,7 +65,7 @@
     <a href="/" class="nav-logo" aria-label="Good Mushroom — home">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </a>
     <ul class="nav-links" role="list">
       <li><a href="products.html">Products</a></li>
@@ -92,7 +93,7 @@
     <span class="nav-logo">
       <span class="nav-logo-mark" aria-hidden="true"></span>
       <span>Good Mushroom</span>
-      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img" />
+      <img src="images/logo-nav.png" alt="Good Mushroom" class="brand-img"  width="343" height="96" />
     </span>
     <button class="mobile-menu-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -128,7 +129,7 @@
         <p class="lede">Country-specific notes on certifications, packaging, shipping routes and import requirements — so your sourcing team knows exactly what to expect, market by market.</p>
       </div>
       <div class="page-hero-art reveal">
-        <img src="images/lions-mane.jpg" alt="Lion&#x27;s Mane for export" loading="eager" />
+        <picture><source srcset="images/lions-mane.webp" type="image/webp"><img src="images/lions-mane.jpg" alt="Lion&#x27;s Mane for export" loading="eager"  width="1200" height="675" /></picture>
         <span class="page-hero-art-caption">Shipped · Berlin, Tokyo, Dubai</span>
       </div>
     </div>
@@ -139,35 +140,35 @@
   <div class="wrap">
     <div class="cat-grid reveal-stagger">
       <a href="exports/usa.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/cordyceps.jpg" alt="USA" loading="lazy" /><span class="cat-card-tag">FDA · USDA</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/cordyceps.webp" type="image/webp"><img src="images/cordyceps.jpg" alt="USA" loading="lazy"  width="900" height="884" /></picture><span class="cat-card-tag">FDA · USDA</span></div>
         <div class="cat-card-body"><h3>United States</h3><span class="cat-card-latin">FDA-aligned, USDA NOP-equivalent</span><div class="cat-card-meta"><span>NY · LA · Miami</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/uk.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/shiitake.jpg" alt="UK" loading="lazy" /><span class="cat-card-tag">FSA · Soil Assoc.</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/shiitake.webp" type="image/webp"><img src="images/shiitake.jpg" alt="UK" loading="lazy"  width="1200" height="848" /></picture><span class="cat-card-tag">FSA · Soil Assoc.</span></div>
         <div class="cat-card-body"><h3>United Kingdom</h3><span class="cat-card-latin">FSA-aligned, Soil Association ready</span><div class="cat-card-meta"><span>London · Manchester</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/uae.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/extract.jpg" alt="UAE" loading="lazy" /><span class="cat-card-tag">ESMA · Halal</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/extract.webp" type="image/webp"><img src="images/extract.jpg" alt="UAE" loading="lazy"  width="1000" height="667" /></picture><span class="cat-card-tag">ESMA · Halal</span></div>
         <div class="cat-card-body"><h3>United Arab Emirates</h3><span class="cat-card-latin">ESMA-aligned, Halal-certifiable</span><div class="cat-card-meta"><span>Dubai · Abu Dhabi</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/japan.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/reishi.jpg" alt="Japan" loading="lazy" /><span class="cat-card-tag">MHLW · JAS</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/reishi.webp" type="image/webp"><img src="images/reishi.jpg" alt="Japan" loading="lazy"  width="1200" height="773" /></picture><span class="cat-card-tag">MHLW · JAS</span></div>
         <div class="cat-card-body"><h3>Japan</h3><span class="cat-card-latin">MHLW-aligned, JAS Organic on request</span><div class="cat-card-meta"><span>Tokyo · Osaka</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/south-korea.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/lions-mane.jpg" alt="South Korea" loading="lazy" /><span class="cat-card-tag">MFDS</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/lions-mane.webp" type="image/webp"><img src="images/lions-mane.jpg" alt="South Korea" loading="lazy"  width="1200" height="675" /></picture><span class="cat-card-tag">MFDS</span></div>
         <div class="cat-card-body"><h3>South Korea</h3><span class="cat-card-latin">MFDS-aligned import dossier</span><div class="cat-card-meta"><span>Seoul · Busan</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/singapore.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/oyster.jpg" alt="Singapore" loading="lazy" /><span class="cat-card-tag">SFA</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/oyster.webp" type="image/webp"><img src="images/oyster.jpg" alt="Singapore" loading="lazy"  width="1200" height="800" /></picture><span class="cat-card-tag">SFA</span></div>
         <div class="cat-card-body"><h3>Singapore</h3><span class="cat-card-latin">SFA-aligned, HSA for supplements</span><div class="cat-card-meta"><span>Singapore</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/australia.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/herbs.jpg" alt="Australia" loading="lazy" /><span class="cat-card-tag">TGA · DAFF</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/herbs.webp" type="image/webp"><img src="images/herbs.jpg" alt="Australia" loading="lazy"  width="1000" height="667" /></picture><span class="cat-card-tag">TGA · DAFF</span></div>
         <div class="cat-card-body"><h3>Australia</h3><span class="cat-card-latin">TGA-aligned, DAFF biosecurity ready</span><div class="cat-card-meta"><span>Sydney · Melbourne</span><span class="arr">→</span></div></div>
       </a>
       <a href="exports/canada.html" class="cat-card">
-        <div class="cat-card-image"><img src="images/button.jpg" alt="Canada" loading="lazy" /><span class="cat-card-tag">CFIA · NPN</span></div>
+        <div class="cat-card-image"><picture><source srcset="images/button.webp" type="image/webp"><img src="images/button.jpg" alt="Canada" loading="lazy"  width="1200" height="1200" /></picture><span class="cat-card-tag">CFIA · NPN</span></div>
         <div class="cat-card-body"><h3>Canada</h3><span class="cat-card-latin">CFIA-aligned, NPN on request</span><div class="cat-card-meta"><span>Toronto · Vancouver</span><span class="arr">→</span></div></div>
       </a>
     </div>
@@ -179,7 +180,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img" />
+        <img src="images/logo-white.png" alt="Good Mushroom" class="brand-img"  width="802" height="225" />
         <h3>Good <em>Mushroom</em></h3>
         <p>India-based functional mushroom sourcing & supply company. Verified procurement, quality control and documentation under one accountable supplier.</p>
       </div>
