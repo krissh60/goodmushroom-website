@@ -1,126 +1,125 @@
-# GSC Report — Good Mushroom — 31 May 2026
+# GSC Report — Good Mushroom — 04 Jul 2026
 
-**Window analysed:** 2026-02-01 → 2026-05-31 (full Search Console window)
+**Window analysed:** 2026-04-03 → 2026-07-02 (last 90d)
 **Property:** `https://goodmushroom.in/`
-**Key inflection point:** 2026-05-25 — buyer-first repositioning shipped
+**Previous baseline:** 31 May 2026 (see git history)
 
 ---
 
-## TL;DR
+## TL;DR — the pivot worked
 
-1. **Traffic is up since the buyer pivot, not down** — May 25–29 averaged ~33 impressions/day vs. ~15/day for the rest of May. May 29 set a new daily high (56 impressions). The buyer-first rebuild is working at the impressions layer.
-2. **But supplier queries still dominate the actual search demand we're getting**, and our nav renaming + page restructure made the supplier path less obvious. Farmers / supply-partnership page now ranks well (pos 6.9, 104 impressions over the window) but has **0% CTR** — Google is showing it, searchers aren't clicking. That's a title/snippet mismatch caused by the rebrand.
-3. **The hypothesis is half right.** Supplier impressions haven't fallen — but supplier *engagement* (clicks) has. The page is still ranking; it just stopped speaking the supplier's language.
-4. **Recommendation:** dual-path positioning. Keep the buyer-first thesis as primary, but restore explicit supplier signals in nav, hero, page titles, and metadata so we don't bleed the queries we're already winning.
-
----
-
-## 1. Topline numbers (Feb 1 – May 31, 2026)
-
-| Metric | Value |
-|---|---|
-| Clicks | 38 |
-| Impressions | 856 |
-| CTR | 4.44% |
-| Avg position | 8.0 |
-
-Clicks are concentrated heavily on the homepage (29 of 38). India = 89% of clicks (34 of 38). USA = 272 impressions but only 1 click — we're showing up there but not converting the snippet.
+1. **Traffic ~3× since May 31.** 90d totals: 2,469 impressions / 178 clicks / 5.6% CTR. Previous 4-month window was 856 / 38 / 4.4%.
+2. **Farmers page leak: completely fixed.** 609 impr / 32 clicks / 5.3% CTR at pos 5.6, up from 104 / 0 / 0%. The dual-path rebuild and "For Farmers" nav restore both landed.
+3. **Homepage is dominant.** 1,122 impr / 124 clicks / 11.1% CTR at pos 5.5. Branded "good mushroom" is 74 impr / 34 clicks / 46% CTR — outreach is generating branded search.
+4. **The biggest new opportunity is Ashwagandha bulk queries.** Twelve distinct "bulk ashwagandha / withania somnifera" queries (63+ total impressions) all stuck at position 19-22 with ~0 clicks. Title/meta rewrite to move the page from pos 20 → pos 8-10 is the single highest-ROI SEO fix.
+5. **USA is showing us but not converting.** 595 impressions / 1 click / 0.2% CTR. Big untapped market.
 
 ---
 
-## 2. The supplier-vs-buyer query split
+## 1. Topline (Apr 3 – Jul 2, 2026)
 
-There are 29 distinct queries across the full window. Splitting by intent:
+| Metric | Value | vs May-31 baseline |
+|---|---|---|
+| Clicks | 178 | +368% |
+| Impressions | 2,469 | +188% |
+| CTR | 5.6% | +1.2pp |
+| Avg position (top pages) | 5–12 | improved |
 
-### Supplier / seller / farmer queries (14 queries, 25 impressions, 1 click)
+Country split: India 1,559 impr / 164 clicks (10.5% CTR) · USA 595 / 1 (0.2%) · Canada 56 / 2 · Japan 13 / 1 · UAE 12 / 1 · Singapore 12 / 1.
 
-| Query | Pos | Impr | Clicks |
-|---|---:|---:|---:|
-| cordyceps mushroom buyers | **1.0** | 4 | 0 |
-| where to sell mushroom in india | 38.7 | 3 | 0 |
-| cordyceps mushroom wholesale | 32.7 | 3 | 0 |
-| where to sell cordyceps militaris in india | 7.5 | 2 | **1** |
-| where to sell | 5.5 | 2 | 0 |
-| lion's mane mushroom wholesale | 42.0 | 2 | 0 |
-| any buyers | 4.0 | 1 | 0 |
-| alternate supplier | 2.0 | 1 | 0 |
-| buyer in india | 1.0 | 1 | 0 |
-| seller near me | 4.0 | 1 | 0 |
-| export of mushroom from india | 70.0 | 1 | 0 |
-| medicinal mushrooms wholesale | 32.0 | 1 | 0 |
-| ashwagandha root bulk / bulk ashwagandha root | 24–30 | 2 | 0 |
-
-These are **farmers Googling "where can I sell my cordyceps"** — exactly the supply-partner audience. We're ranking position 1 for "cordyceps mushroom buyers" and "buyer in india" and getting **zero clicks** on those impressions. That's the snippet mismatch.
-
-### Buyer / ingredient queries (4 queries, 7 impressions, 0 clicks)
-
-| Query | Pos | Impr | Clicks |
-|---|---:|---:|---:|
-| mushroom powder dual extract | 69.8 | 4 | 0 |
-| cordyceps powder | 43.0 | 1 | 0 |
-| ganoderma spore powder | 32.0 | 1 | 0 |
-| mushroom extract | 71.0 | 1 | 0 |
-
-Buyer-intent queries are showing up at positions 30–70 — we're not ranking yet. The buyer-first content is too new (shipped May 25) for Google to have reindexed and re-ranked us; this needs 30–90 days.
-
-**Read this carefully:** the buyer-first rebuild isn't broken, it just hasn't shown up in the rankings yet. Meanwhile, the supplier-side rankings we already had are being underused.
+Device split: Mobile 941 impr / 118 clicks (12.5% CTR) · Desktop 1,507 / 54 (3.6%) · Tablet 21 / 6 (28.6%). Mobile continues to convert 3× better than desktop.
 
 ---
 
-## 3. Pages — what's working, what's leaking
+## 2. Page performance snapshot
 
 | Page | Pos | Impr | Clicks | CTR | Verdict |
 |---|---:|---:|---:|---:|---|
-| `/` (homepage) | 5.7 | **417** | **29** | 7.0% | 🟢 Working — primary engine |
-| `/products.html` | 7.8 | 203 | 1 | 0.5% | 🟡 High impressions, terrible CTR — title/snippet generic |
-| `/products/cordyceps.html` | 10.2 | 114 | 3 | 2.6% | 🟢 Solid, will improve with new content |
-| `/farmers.html` | 6.9 | **104** | **0** | **0.0%** | 🔴 Ranking well, zero clicks — **biggest leak** |
-| `/products/lions-mane.html` | 11.0 | 66 | 3 | 4.5% | 🟢 Good |
-| `/about.html` | 9.9 | 39 | 1 | 2.6% | 🟢 Fine |
-| `/products/ashwagandha.html` | 10.3 | 26 | 0 | 0.0% | 🔴 |
-| `/products/extracts-dual.html` | 24.6 | 17 | 0 | 0.0% | 🔴 |
-| `/products/button.html` | 6.5 | 19 | 0 | 0.0% | 🔴 |
-
-**The farmers page is the single biggest fixable problem.** 104 impressions, 0 clicks. Compare to the homepage at 7% CTR — that's at least 7 missing clicks/month right there, before any improvement.
-
----
-
-## 4. What was working before the buyer pivot (and isn't anymore)
-
-The pre-May 25 site had:
-- Nav item literally labelled **"Farmers"** — verb-clear for someone Googling "where to sell"
-- Homepage hero that mentioned both farmers and buyers
-- Page titles on the supply page that included "sell", "farmers", "growers"
-
-After the May 25 rebuild, the same page is now:
-- Nav-labelled **"Supply Partnership"** — accurate to the buyer industry but invisible to a farmer Googling in Hindi/English mix
-- Wrapped in a buyer-led homepage with no above-the-fold supplier entry-point
-- Titled in buyer-language ("supply partnership", "verified procurement")
-
-**This explains the 0% CTR on `farmers.html` with 104 impressions.** Google is still ranking us for "where to sell mushroom in india" and "cordyceps mushroom buyers" — but when the searcher sees the SERP snippet, it reads like an exporter page, not "sell your crop here."
+| `/` | 5.5 | 1,122 | 124 | 11.1% | Primary engine |
+| `/farmers.html` | 5.6 | 609 | 32 | 5.3% | Fully recovered from 0% leak |
+| `/products.html` | 9.2 | 408 | 4 | 1.0% | Bleeding — title too generic |
+| `/products/cordyceps.html` | 11.7 | 246 | 3 | 1.2% | Missing "wholesale" query |
+| `/products/ashwagandha.html` | 14.1 | 176 | 1 | 0.6% | **Biggest opportunity** |
+| `/about.html` | 5.1 | 168 | 11 | 6.5% | Healthy |
+| `/faq.html` | 5.9 | 133 | 1 | 0.8% | Bleeding |
+| `/products/lions-mane.html` | 11.5 | 119 | 3 | 2.5% | Missing "wholesale" |
+| `/products/button.html` | 10.4 | 78 | 0 | 0.0% | 78 impressions, zero clicks |
+| `/products/reishi.html` | 15.7 | 53 | 0 | 0.0% | Missing "liquid extract" |
+| `/products/extracts-dual.html` | 20.3 | 49 | 0 | 0.0% | Title hyphen may be blocking match |
+| `/buyers.html` | 7.7 | 40 | 0 | 0.0% | One rank away from clicks |
+| `/products/oyster.html` | 14.0 | 33 | 0 | 0.0% | |
+| `/products/tulsi.html` | 7.9 | 22 | 0 | 0.0% | |
 
 ---
 
-## 5. What's working in the new (May 25+) update
+## 3. High-value queries we're already ranking for
 
-- **Daily impressions are up** — May 25–29 daily impressions ranged 12–56, averaging higher than the prior 4 weeks. The expanded buyer content is being crawled and shown.
-- **Cordyceps page is climbing** — it's now the #3 page by impressions despite being rebuilt 6 days ago. The new whole-fruiting-body / non-China content shipped today (May 31) hasn't been indexed yet, so further uplift is still ahead.
-- **Homepage CTR holding** — 7% on the homepage is strong; the buyer-first hero is converting impression → click as well as before.
-- **Mobile CTR is excellent** — 9.6% on mobile vs 1.8% desktop. Mobile-first decisions in the rebuild were correct.
+### Ashwagandha bulk cluster — the single biggest fixable set
+
+All rank at position 19-22 (page 2-3, no clicks), all landing on `/products/ashwagandha.html`:
+
+| Query | Impr | Pos |
+|---|---:|---:|
+| bulk ashwagandha root | 12 | 20.9 |
+| ashwagandha root bulk | 9 | 20.1 |
+| bulk withania somnifera | 7 | 20.1 |
+| ashwagandha in bulk | 6 | 22.5 |
+| bulk withania somnifera price | 6 | 19.2 |
+| bulk ashwagandha | 5 | 22.8 |
+| bulk withania somnifera root granules | 5 | 32.2 |
+| bulk ashwagandha tablets | 4 | 15.0 |
+| bulk ashwagandha root powder | 3 | 24.0 |
+| ashwagandha root wholesale | 2 | 19.5 |
+| bulk ashwagandha root granules | 2 | 39.0 |
+| bulk withania somnifera tablets | 2 | 25.5 |
+
+### Wholesale-intent queries with generic titles
+
+| Query | Impr | Pos | Landing page |
+|---|---:|---:|---|
+| cordyceps mushroom wholesale | 6 | 36.2 | cordyceps.html |
+| lion's mane mushroom wholesale | 6 | 36.2 | lions-mane.html |
+| medicinal mushrooms wholesale | 3 | 36.0 | products.html |
+| mushroom powder dual extract | 9 | 59.9 | extracts-dual.html |
+| dual extract mushroom powder | 2 | 42.5 | extracts-dual.html |
+| mushroom products | 9 | 51.1 | products.html |
+| reishi ganoderma mushroom liquid extract | 2 | 65.5 | reishi.html |
+| ganoderma spore powder | 1 | 32.0 | reishi.html |
+
+### Supplier-side queries (working, keep protecting)
+
+| Query | Impr | Pos | Clicks |
+|---|---:|---:|---:|
+| where to sell mushroom in india | 9 | 20.4 | 1 |
+| where to sell | 6 | 3.8 | 0 |
+| cordyceps mushroom buyers | 4 | 1.0 | 0 |
+| where to sell cordyceps militaris in india | 2 | 7.5 | 1 |
+| who will buy | 3 | 6.7 | 0 |
+| any buyers | 1 | 4.0 | 0 |
+| cordyceps militaris mushroom buyers in india | 3 | 22.0 | 0 |
 
 ---
 
-## 6. Recommendations — dual-path positioning
+## 4. Actions shipped in this commit
 
-We need the site to clearly speak to **both** sides without diluting either. The buyer is the primary commercial customer; the supplier is the upstream input. They both arrive via Google with completely different vocabularies.
-
-| # | Change | Why | Page |
+| # | Change | Target query cluster | Page |
 |---|---|---|---|
-| 1 | Add **"For Farmers"** secondary entry-point in main nav (in addition to "Supply Partnership") | Restores the supplier-readable label that was indexed for months | All pages (nav) |
-| 2 | **Rewrite `farmers.html` `<title>` and `<meta description>`** to lead with "Sell your cordyceps / mushrooms — Good Mushroom buys from Indian farmers" | Fixes the 104-impression / 0-click leak directly | `farmers.html` |
-| 3 | Add a **dual-path band on homepage** ("I want to buy ingredients" / "I grow mushrooms — I want to sell") immediately under the hero | Captures both query types without the buyer thesis losing primacy | `index.html` |
-| 4 | Restore **supplier-intent keywords** to homepage and farmers page meta (`where to sell mushroom in india`, `cordyceps buyers india`, `mushroom farmers india`) | These are the queries we already rank for — stop hiding them | `index.html`, `farmers.html` |
-| 5 | Add a **"Selling to us"** plain-language micro-section with the literal phrase "If you grow mushrooms in India and want to sell" | Matches supplier Google queries verbatim | `index.html`, `farmers.html` |
-| 6 | **Keep buyer-first thesis intact** — hero, founders, COA, non-China positioning all stay primary | Buyer-intent content is too new to judge; don't churn | — |
+| 1 | Retitle ashwagandha page around "bulk ashwagandha root wholesale — withania somnifera powder, granules & extract"; meta desc names "bulk", "granules", "tablets", "wholesale", "price" | 12 ashwagandha-bulk queries pos 19-22 | `products/ashwagandha.html` |
+| 2 | Retitle cordyceps page to include "Cordyceps Militaris Wholesale — Cordyceps Mushroom Powder Bulk Supplier India" | "cordyceps mushroom wholesale" pos 36, "cordyceps militaris mushroom buyers in india" pos 22 | `products/cordyceps.html` |
+| 3 | Retitle lion's mane page to include "Lion's Mane Mushroom Wholesale — Hericium Erinaceus Bulk Supplier India" | "lion's mane mushroom wholesale" pos 36 | `products/lions-mane.html` |
+| 4 | Retitle reishi page to include "Reishi Ganoderma Wholesale — Ganoderma Lucidum Powder, Spore & Liquid Extract"; meta desc names spore powder + liquid extract | "reishi ganoderma mushroom liquid extract", "ganoderma spore powder" | `products/reishi.html` |
+| 5 | Retitle extracts-dual page to lead with "Mushroom Powder Dual Extract" (matches literal query, hyphen removed from lead) | "mushroom powder dual extract" pos 60, "dual extract mushroom powder" pos 42 | `products/extracts-dual.html` |
+| 6 | Retitle products catalogue to "Mushroom Products India — Medicinal Mushrooms Wholesale Catalogue" | "mushroom products" pos 51, "medicinal mushrooms wholesale" pos 36 | `products.html` |
+| 7 | Retitle button page around "Button Mushroom Wholesale India — Agaricus Bisporus Fresh, Dried & Canned Bulk Supply" | 78 impressions / 0 clicks bleed | `products/button.html` |
+| 8 | Retitle oyster page around "Oyster Mushroom Wholesale India — Pleurotus Pearl, Pink, Blue & King" | 33 impressions / 0 clicks | `products/oyster.html` |
+| 9 | Retitle tulsi page around "Bulk Tulsi / Holy Basil Wholesale — Ocimum Sanctum" | 22 impressions / 0 clicks | `products/tulsi.html` |
+| 10 | Sharpen buyers.html title with location + turnaround signal | 40 impressions / 0 clicks pos 7.7 | `buyers.html` |
+| 11 | Add supplier signal to homepage meta desc without diluting brand primacy | "cordyceps mushroom buyers" pos 1 / 0 clicks | `index.html` |
 
-Items 1–5 ship in this commit.
+---
+
+## 5. Not shipped in this commit — needs judgement
+
+- **USA 0.2% CTR (595 impressions).** Snippet reads India-heavy; US buyers may be scrolling past. Need to know which queries are driving those US impressions before we tune country-specific language. Recommend one more GSC pull with `country` + `query` breakdown next week.
+- **Country-specific meta on export pages** (`exports/usa.html`, `exports/uk.html`, etc.). GSC impressions on those pages are still small; wait 30-60 days for Google to reindex the current buyer-first content.
+- **Body-content tuning on ashwagandha.** Meta rewrite alone can move pos 20 → pos 10-12. To break into top 5 for the bulk-ashwagandha queries we probably need a short "granules / tablets / powder / extract — bulk formats we supply" section on the page itself.
