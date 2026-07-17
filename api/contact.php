@@ -39,6 +39,7 @@ $env = load_env(__DIR__ . '/.env');
 
 $RECIPIENT_PRIMARY   = $env['RECIPIENT_PRIMARY']   ?? 'krish@goodmushroom.in';
 $RECIPIENT_SECONDARY = $env['RECIPIENT_SECONDARY'] ?? 'anmol@goodmushroom.in';
+$RECIPIENT_SUPPLIER  = $env['RECIPIENT_SUPPLIER']  ?? 'info@goodmushroom.in';
 $SMTP_HOST           = $env['SMTP_HOST']           ?? '';
 $SMTP_PORT           = (int)($env['SMTP_PORT']     ?? 465);
 $SMTP_USER           = $env['SMTP_USER']           ?? '';
@@ -163,9 +164,14 @@ try {
 
     $from_addr = $SMTP_FROM !== '' ? $SMTP_FROM : 'no-reply@goodmushroom.in';
     $mail->setFrom($from_addr, $SMTP_FROM_NAME);
-    $mail->addAddress($RECIPIENT_PRIMARY);
-    if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {
-        $mail->addAddress($RECIPIENT_SECONDARY);
+
+    if ($form_type === 'seller') {
+        $mail->addAddress($RECIPIENT_SUPPLIER);
+    } else {
+        $mail->addAddress($RECIPIENT_PRIMARY);
+        if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {
+            $mail->addAddress($RECIPIENT_SECONDARY);
+        }
     }
     if ($email !== '' && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $mail->addReplyTo($email, $name !== '' ? $name : $email);
@@ -186,7 +192,7 @@ try {
 } catch (PHPMailerException $e) {
     error_log('GoodMushroom mail send failed: ' . $mail->ErrorInfo);
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 6361 621 886.']);
+    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 82195 99053.']);
 } catch (\Throwable $e) {
     error_log('GoodMushroom mail unexpected: ' . $e->getMessage());
     http_response_code(500);
