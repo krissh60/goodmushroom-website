@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Lead forms — POST to /api/contact.php ---------- */
   const API_ENDPOINT = '/api/contact.php';
-  const MAILTO_FALLBACK = 'krish@goodmushroom.in,anmol@goodmushroom.in';
+  const MAILTO_FALLBACK = 'info@goodmushroom.in';
 
   const validateForm = (form) => {
     let ok = true;
