@@ -89,7 +89,13 @@ $email     = clean($_POST['email']   ?? '', 200);
 $phone     = clean($_POST['phone']   ?? '', 60);
 $message   = clean($_POST['message'] ?? '', 4000);
 
-if ($form_type === 'seller') {
+if ($form_type === 'report') {
+    if ($name === '' || $phone === '' || $email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($_POST['state']) || empty($_POST['report_wanted'])) {
+        http_response_code(400);
+        echo json_encode(['ok' => false, 'error' => 'Missing required fields']);
+        exit;
+    }
+} elseif ($form_type === 'seller') {
     if ($name === '' || $phone === '' || empty($_POST['state']) || empty($_POST['product'])) {
         http_response_code(400);
         echo json_encode(['ok' => false, 'error' => 'Missing required fields']);
@@ -111,6 +117,7 @@ if ($form_type === 'seller') {
 
 /* ---- Build email body ---- */
 $subject_default = match ($form_type) {
+    'report'      => 'New Report Request — Good Mushroom',
     'seller'      => 'New Farmer/Seller Registration — Good Mushroom',
     'spec_sheet'  => 'Export Spec Sheet Request — Good Mushroom',
     default       => 'New Buyer Enquiry — Good Mushroom',
@@ -167,6 +174,11 @@ try {
 
     if ($form_type === 'seller') {
         $mail->addAddress($RECIPIENT_SUPPLIER);
+    } elseif ($form_type === 'report') {
+        $mail->addAddress($RECIPIENT_PRIMARY);
+        if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {
+            $mail->addAddress($RECIPIENT_SECONDARY);
+        }
     } else {
         $mail->addAddress($RECIPIENT_PRIMARY);
         if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {
