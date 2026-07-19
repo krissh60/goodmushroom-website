@@ -1,7 +1,7 @@
 <?php
 /**
  * Good Mushroom — Contact form endpoint.
- * Handles buyer + seller + export spec-sheet enquiries from any page on the site.
+ * Handles buyer, seller, report, advisory and export spec-sheet enquiries from any page on the site.
  * Reads recipient + SMTP creds from /var/www/goodmushroom/api/.env
  */
 
@@ -95,6 +95,12 @@ if ($form_type === 'report') {
         echo json_encode(['ok' => false, 'error' => 'Missing required fields']);
         exit;
     }
+} elseif ($form_type === 'advisory') {
+    if ($name === '' || $phone === '' || $email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($_POST['service_wanted']) || empty($_POST['state'])) {
+        http_response_code(400);
+        echo json_encode(['ok' => false, 'error' => 'Missing required advisory fields']);
+        exit;
+    }
 } elseif ($form_type === 'seller') {
     if ($name === '' || $phone === '' || empty($_POST['state']) || empty($_POST['product'])) {
         http_response_code(400);
@@ -119,6 +125,7 @@ if ($form_type === 'report') {
 $subject_default = match ($form_type) {
     'report'      => 'New Report Request — Good Mushroom',
     'seller'      => 'New Farmer/Seller Registration — Good Mushroom',
+    'advisory'    => 'New Advisory Enquiry — Good Mushroom',
     'spec_sheet'  => 'Export Spec Sheet Request — Good Mushroom',
     default       => 'New Buyer Enquiry — Good Mushroom',
 };
@@ -172,7 +179,7 @@ try {
     $from_addr = $SMTP_FROM !== '' ? $SMTP_FROM : 'no-reply@goodmushroom.in';
     $mail->setFrom($from_addr, $SMTP_FROM_NAME);
 
-    if ($form_type === 'seller' || $form_type === 'report') {
+    if ($form_type === 'seller' || $form_type === 'report' || $form_type === 'advisory') {
         $mail->addAddress($RECIPIENT_SUPPLIER);
     } else {
         $mail->addAddress($RECIPIENT_PRIMARY);
