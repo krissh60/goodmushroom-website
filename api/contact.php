@@ -172,13 +172,8 @@ try {
     $from_addr = $SMTP_FROM !== '' ? $SMTP_FROM : 'no-reply@goodmushroom.in';
     $mail->setFrom($from_addr, $SMTP_FROM_NAME);
 
-    if ($form_type === 'seller') {
+    if ($form_type === 'seller' || $form_type === 'report') {
         $mail->addAddress($RECIPIENT_SUPPLIER);
-    } elseif ($form_type === 'report') {
-        $mail->addAddress($RECIPIENT_PRIMARY);
-        if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {
-            $mail->addAddress($RECIPIENT_SECONDARY);
-        }
     } else {
         $mail->addAddress($RECIPIENT_PRIMARY);
         if ($RECIPIENT_SECONDARY !== '' && $RECIPIENT_SECONDARY !== $RECIPIENT_PRIMARY) {

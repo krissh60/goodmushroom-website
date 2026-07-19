@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Lead forms — POST to /api/contact.php ---------- */
   const API_ENDPOINT = '/api/contact.php';
-  const MAILTO_FALLBACK = 'info@goodmushroom.in';
+
 
   const validateForm = (form) => {
     let ok = true;
@@ -117,17 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return ok;
   };
 
-  const mailtoFallback = (form) => {
-    const subjectEl = form.querySelector('[name="_subject"]');
-    const subject = subjectEl ? subjectEl.value : 'New Enquiry — Good Mushroom';
-    const fd = new FormData(form);
-    const lines = [];
-    for (const [k, v] of fd.entries()) {
-      if (k.startsWith('_') || k === 'website' || !v) continue;
-      const label = k.replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase());
-      lines.push(`${label}: ${v}`);
+  const showFallbackError = (form) => {
+    const successEl = form.querySelector('.success-msg');
+    if (successEl) {
+      successEl.textContent = '⚠ Something went wrong. Please try again, or message us on WhatsApp at +91 82195 99053.';
+      successEl.style.display = 'block';
+      successEl.style.color = 'var(--ink-mid)';
     }
-    location.href = `mailto:${MAILTO_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
   };
 
   document.querySelectorAll('#buyer-form, #seller-form, #exitForm').forEach(form => {
@@ -163,12 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(json.error || 'Submission failed');
         }
       } catch (err) {
-        console.warn('Form submit failed, falling back to mailto:', err);
-        if (successEl) {
-          successEl.textContent = '⚠ Connection issue — opening your email client as a backup. Please review and send.';
-          successEl.style.display = 'block';
-        }
-        mailtoFallback(form);
+        console.warn('Form submit failed:', err);
+        showFallbackError(form);
       } finally {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalLabel; }
       }
