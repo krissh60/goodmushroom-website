@@ -5,23 +5,26 @@ customer, supplier, SMTP or payment credentials.
 
 ## Files to copy
 
-Copy the whole `advisory` directory to the existing Good Mushroom web root, beside the current
-`api`, `css` and `images` directories. Example:
+Copy the whole `advisory` directory **and replace the existing root `api/contact.php`** with
+the version from this branch. Keep the protected `api/.env` file and the `api/lib` directory
+exactly where they are; do not copy, move or expose either of them.
 
 ```text
 /var/www/goodmushroom/
 ├── api/
 │   ├── .env                 # existing; do not copy or expose it
-│   └── contact.php
+│   ├── contact.php           # replace with this branch's updated file
+│   └── lib/                  # existing; retain
 ├── advisory/
 │   ├── index.html
-│   └── api/contact.php      # bridge to ../../api/contact.php
+│   └── api/contact.php       # bridge to ../../api/contact.php
 └── ...
 ```
 
-The directory must stay inside that same web root. The bridge at
-`advisory/api/contact.php` intentionally reuses the existing protected `api/.env` and
-PHPMailer setup, so no credentials belong in the advisory folder.
+The advisory directory must stay inside that same web root. The root handler update adds
+server-side validation and routes advisory enquiries to `info@goodmushroom.in`; the bridge at
+`advisory/api/contact.php` then reuses that handler, its protected `api/.env` and its
+PHPMailer setup. No credentials belong in the advisory folder.
 
 ## Hostinger setup
 
