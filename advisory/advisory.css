@@ -66,3 +66,27 @@
 .adv-hero-copy .h-hero{font-size:var(--step-5);line-height:.98;letter-spacing:-.022em;max-width:16ch}
 .adv-hero-copy .lede{margin-top:24px;max-width:56ch;font-size:var(--step-1);line-height:1.45}
 @media(max-width:620px){.adv-hero{padding:48px 0}.adv-hero-copy .h-hero{max-width:16ch}}
+
+
+/* Long-form resource pages. */
+.adv-toc{margin:34px 0 44px;padding:22px 24px;border:1px solid var(--line);background:var(--bone-2)}
+.adv-toc h2{font:500 var(--step--2) var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-light);margin:0 0 12px}
+.adv-toc ol{margin:0;padding-left:18px;columns:2;gap:32px}
+.adv-toc li{margin:7px 0;padding-left:4px;font-size:var(--step--1);break-inside:avoid}
+.adv-toc a{border-bottom:1px solid var(--line);padding-bottom:2px}.adv-toc a:hover{color:var(--brand);border-color:var(--brand)}
+.adv-checklist{list-style:none!important;padding:0!important;margin:22px 0 30px!important;border-top:1px solid var(--line)}
+.adv-checklist li{padding:14px 0 14px 28px!important;margin:0!important;border-bottom:1px solid var(--line-soft);position:relative}
+.adv-checklist li:before{content:"✓";position:absolute;left:2px;color:var(--brand);font-weight:700}
+.adv-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+.adv-grid-card{padding:24px;border:1px solid var(--line);background:var(--bone)}
+.adv-grid-card h3{margin-top:0!important}.adv-grid-card p:last-child{margin-bottom:0}
+.adv-source-list{margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.adv-source-list h2{font-size:var(--step-2)!important;margin:0 0 12px!important}
+.adv-source-list ul{padding-left:20px}.adv-source-list a{text-decoration:underline;text-underline-offset:3px}.adv-source-list a:hover{color:var(--brand)}
+.adv-article details{border-top:1px solid var(--line);padding:18px 0}.adv-article details:last-child{border-bottom:1px solid var(--line)}
+.adv-article summary{cursor:pointer;font-weight:600;list-style:none;position:relative;padding-right:28px}
+.adv-article summary:after{content:"+";position:absolute;right:0;top:-4px;font-size:1.35rem;color:var(--brand)}
+.adv-article details[open] summary:after{content:"–"}
+.adv-article details p{margin:14px 0 0}
+.adv-resource-list .adv-resource{display:flex;flex-direction:column}.adv-resource .link-arrow{margin-top:auto;align-self:flex-start}
+@media(max-width:700px){.adv-toc ol{columns:1}.adv-grid-2{grid-template-columns:1fr}}
