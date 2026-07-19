@@ -36,3 +36,9 @@
   .adv-hero { padding: 52px 0; }
   .adv-hero-copy .h-hero { max-width: 12ch; }
 }
+
+
+/* Four-step DPR engagement process. */
+.adv-process-four { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .adv-process-four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .adv-process-four { grid-template-columns: 1fr; } }
