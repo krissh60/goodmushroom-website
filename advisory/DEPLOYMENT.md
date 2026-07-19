@@ -52,3 +52,14 @@ PHPMailer setup. No credentials belong in the advisory folder.
 - Custom DPR/project advisory is **price on assessment** and has no public fixed rate.
 - The page does not promise yields, profits, funding, licences, buyer placement, purchase or
   supply/offtake outcomes.
+
+
+## Shared main-site design assets (required for the redesign)
+
+The redesigned advisory pages load the same Good Mushroom CSS, logo, images and JavaScript through same-domain Nginx aliases. Add these locations inside the advisory subdomain server block, before the generic location / block, then run nginx -t and reload only if the test succeeds:
+
+    location ^~ /css/    { alias /var/www/goodmushroom/css/; }
+    location ^~ /images/ { alias /var/www/goodmushroom/images/; }
+    location ^~ /js/     { alias /var/www/goodmushroom/js/; }
+
+Do not copy or expose api/.env. The advisory folder still uses its local API bridge, which calls the protected shared handler.
