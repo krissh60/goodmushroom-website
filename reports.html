@@ -45,6 +45,7 @@
     @media(max-width:980px){.report-cards{grid-template-columns:1fr}}
     .report-card{background:var(--bone);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:box-shadow .25s ease,border-color .25s ease}
     .report-card:hover{border-color:var(--brand);box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .report-card-name{font-family:var(--font-mono);font-size:var(--step--2);text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0}
     .report-card-title{font-family:var(--font-display);font-size:var(--step-2);line-height:1.12;font-weight:400}
     .report-card-for{font-size:var(--step--1);color:var(--ink-mid);font-style:italic;margin:0}
     .report-card h4{font-family:var(--font-mono);font-size:var(--step--2);text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0}
@@ -115,8 +116,8 @@
           <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px"><a href="#reports" class="btn btn-primary btn-lg">Compare reports ↓</a><a href="https://advisory.goodmushroom.in/" class="btn btn-outline btn-lg">Explore Advisory</a></div>
         </div>
         <div class="page-hero-art reveal">
-          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.jpg" alt="Dried functional mushrooms for commercial evaluation" loading="eager" width="1800" height="1200"></picture>
-          <span class="page-hero-art-caption">Defined commercial questions before unbounded advice</span>
+          <picture data-asset-role="farming-reports-hero"><source srcset="images/oyster.webp" type="image/webp"><img src="images/oyster.jpg" alt="Cultivated oyster mushrooms for a mushroom farming report context" loading="eager" decoding="async" width="1200" height="800"></picture>
+          <span class="page-hero-art-caption">Mushroom crop context for planning decisions</span>
         </div>
       </div>
     </div>
@@ -145,6 +146,7 @@
 
       <div class="report-cards reveal-stagger">
         <article class="report-card" id="feasibility">
+          <p class="report-card-name">Commercial Feasibility Report</p>
           <h3 class="report-card-title">“Should I take this mushroom project further?”</h3>
           <p class="report-card-for">For founders testing whether a project deserves more planning and investment.</p>
           <h4>What the report covers</h4>
@@ -155,6 +157,7 @@
         </article>
 
         <article class="report-card" id="buyer-intelligence">
+          <p class="report-card-name">Buyer Intelligence Report</p>
           <h3 class="report-card-title">“What should I understand before approaching buyers?”</h3>
           <p class="report-card-for">For growers preparing a product, story and evidence for buyer-facing conversations.</p>
           <h4>What the report covers</h4>
@@ -165,6 +168,7 @@
         </article>
 
         <article class="report-card" id="readiness">
+          <p class="report-card-name">Supplier / Buyer-Readiness Report</p>
           <h3 class="report-card-title">“What is stopping me from being buyer-ready?”</h3>
           <p class="report-card-for">For existing growers who need a practical readiness-gap assessment before outreach.</p>
           <h4>What the report covers</h4>

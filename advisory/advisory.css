@@ -49,6 +49,7 @@
 @media(max-width:980px){.report-cards{grid-template-columns:1fr}}
 .report-card{background:var(--bone);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:box-shadow .25s ease,border-color .25s ease}
 .report-card:hover{border-color:var(--brand);box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.report-card-name{font-family:var(--font-mono);font-size:var(--step--2);text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin:0}
 .report-card-title{font-family:var(--font-display);font-size:var(--step-2);line-height:1.12;font-weight:400}
 .report-card-for{font-size:var(--step--1);color:var(--ink-mid);font-style:italic;margin:0}
 .report-card h4{font-family:var(--font-mono);font-size:var(--step--2);text-transform:uppercase;letter-spacing:.06em;color:var(--brand);margin:0}
@@ -110,4 +111,7 @@
 .adv-deliverables h3{margin-top:0}.adv-deliverables ul{margin:12px 0 0}.adv-deliverables li{margin-bottom:8px}
 @media(max-width:980px){.adv-service-preview-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.adv-service-preview-head{display:block}.adv-service-preview-head p{margin-top:14px}.adv-service-preview-grid{grid-template-columns:1fr}}
-.adv-service-preview::after{content:'';display:block;max-width:1200px;aspect-ratio:1402/1122;margin:clamp(28px,5vw,56px) auto 0;border-radius:var(--radius-lg);background:url('/images/advisory-related.webp') center/cover no-repeat;box-shadow:var(--shadow)}
+.adv-visual{max-width:1200px;margin:clamp(28px,5vw,56px) auto 0}
+.adv-visual picture{display:block;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.adv-visual img{display:block;width:100%;height:auto}
+.adv-visual figcaption{margin-top:10px;color:var(--ink-mid);font:500 var(--step--2) var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
