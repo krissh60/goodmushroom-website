@@ -739,7 +739,12 @@ section { padding: var(--sec-y) 0; position: relative; }
    FOOTER
    ================================================================ */
 .foot {
-  background: var(--ink); color: rgba(255,255,255,0.65);
+  background-color: var(--ink);
+  background-image: linear-gradient(90deg, rgba(10,20,10,0.94), rgba(10,20,10,0.78)), url('../images/footer-background.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(255,255,255,0.65);
   padding: clamp(48px, 6vw, 80px) 0 24px;
 }
 .foot-grid {
@@ -1102,11 +1107,12 @@ section { padding: var(--sec-y) 0; position: relative; }
 
 /* ---- Two-up section grid (spec + form) ---- */
 .two-up {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
   align-items: flex-start;
 }
-@media (max-width: 900px) { .two-up { grid-template-columns: 1fr; gap: 36px; } }
+.two-up > * { min-width: 0; }
+@media (max-width: 900px) { .two-up { grid-template-columns: minmax(0, 1fr); gap: 36px; } }
 
 /* ---- Editorial helper (reverse) ---- */
 .editorial.reverse { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
@@ -1128,4 +1134,41 @@ section { padding: var(--sec-y) 0; position: relative; }
 .tag-pill::before {
   content: ''; width: 5px; height: 5px; border-radius: 50%;
   background: var(--brand);
+}
+
+/* ---- Supplier decision cards ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 150px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bone);
+}
+.stat-num {
+  display: block;
+  color: var(--brand);
+  font: 500 var(--step--2) var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.stat-label {
+  display: block;
+  margin-top: 14px;
+  color: var(--ink-mid);
+  font-size: var(--step--1);
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr; }
 }

@@ -90,3 +90,24 @@
 .adv-article details p{margin:14px 0 0}
 .adv-resource-list .adv-resource{display:flex;flex-direction:column}.adv-resource .link-arrow{margin-top:auto;align-self:flex-start}
 @media(max-width:700px){.adv-toc ol{columns:1}.adv-grid-2{grid-template-columns:1fr}}
+
+/* Service visibility and deliverable detail. */
+.adv-service-preview{padding:clamp(40px,6vw,76px) 0;background:var(--bone-2);border-bottom:1px solid var(--line)}
+.adv-service-preview-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:28px}
+.adv-service-preview-head h2{font-family:var(--font-display);font-size:var(--step-3);font-weight:400;margin:12px 0 0}
+.adv-service-preview-head p{max-width:52ch;color:var(--ink-mid);margin:0}
+.adv-service-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.adv-service-preview-card{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);color:var(--ink)}
+.adv-service-preview-card:hover{border-color:var(--brand)}
+.adv-service-preview-card h3{font-family:var(--font-display);font-size:var(--step-1);font-weight:400;line-height:1.08;margin:0}
+.adv-service-preview-card p{font-size:var(--step--1);color:var(--ink-mid);margin:0}
+.adv-service-preview-card .preview-price{font:500 var(--step--1) var(--font-mono);color:var(--brand);margin-top:auto}
+.adv-service-preview-card .preview-link{font-size:var(--step--1);font-weight:600;color:var(--brand)}
+.adv-card-detail{padding:14px 0 2px;border-top:1px solid var(--line-soft);color:var(--ink-mid);font-size:var(--step--1)}
+.adv-card-detail strong{display:block;color:var(--ink);font-size:var(--step--2);font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.adv-card-detail ul{margin:0!important}.adv-card-detail li{padding:5px 0!important}.adv-card-detail li:before{content:'·'!important}
+.adv-deliverables{margin-top:24px;padding:24px;background:var(--brand-soft);border-left:3px solid var(--brand)}
+.adv-deliverables h3{margin-top:0}.adv-deliverables ul{margin:12px 0 0}.adv-deliverables li{margin-bottom:8px}
+@media(max-width:980px){.adv-service-preview-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.adv-service-preview-head{display:block}.adv-service-preview-head p{margin-top:14px}.adv-service-preview-grid{grid-template-columns:1fr}}
+.adv-service-preview::after{content:'';display:block;max-width:1200px;aspect-ratio:1402/1122;margin:clamp(28px,5vw,56px) auto 0;border-radius:var(--radius-lg);background:url('/images/advisory-related.webp') center/cover no-repeat;box-shadow:var(--shadow)}

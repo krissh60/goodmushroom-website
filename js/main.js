@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const showFallbackError = (form) => {
     const successEl = form.querySelector('.success-msg');
     if (successEl) {
-      successEl.textContent = '⚠ Something went wrong. Please try again, or message us on WhatsApp at +91 82195 99053.';
+      successEl.textContent = '⚠ Something went wrong. Please try again, or message us on WhatsApp at +91 6361621886.';
       successEl.style.display = 'block';
       successEl.style.color = 'var(--ink-mid)';
     }
@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.ok && json.ok) {
           if (successEl) {
             successEl.textContent = form.id === 'buyer-form'
-              ? '✓ Thank you. We\'ve received your enquiry and will be in touch within 24 hours.'
-              : form.id === 'seller-form'
-                ? '✓ Thank you for registering. Our sourcing team will contact you within 48 hours.'
+              ? '✓ Thank you. We\'ve received your enquiry and will be in touch after review.'
+                : form.id === 'seller-form'
+                ? '✓ Thank you for registering. Our sourcing team will review the details and contact you if there is a route fit.'
                 : '✓ Thank you — your request has been received.';
             successEl.style.display = 'block';
           }
