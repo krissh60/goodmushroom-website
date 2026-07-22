@@ -1,6 +1,6 @@
 <?php
 /**
- * Good Mushroom — Contact form endpoint.
+ * Good Mushroom â€” Contact form endpoint.
  * Handles buyer, seller, report, advisory and export spec-sheet enquiries from any page on the site.
  * Reads recipient + SMTP creds from /var/www/goodmushroom/api/.env
  */
@@ -123,11 +123,11 @@ if ($form_type === 'report') {
 
 /* ---- Build email body ---- */
 $subject_default = match ($form_type) {
-    'report'      => 'New Report Request — Good Mushroom',
-    'seller'      => 'New Farmer/Seller Registration — Good Mushroom',
-    'advisory'    => 'New Advisory Enquiry — Good Mushroom',
-    'spec_sheet'  => 'Export Spec Sheet Request — Good Mushroom',
-    default       => 'New Buyer Enquiry — Good Mushroom',
+    'report'      => 'New Report Request â€” Good Mushroom',
+    'seller'      => 'New Farmer/Seller Registration â€” Good Mushroom',
+    'advisory'    => 'New Advisory Enquiry â€” Good Mushroom',
+    'spec_sheet'  => 'Export Spec Sheet Request â€” Good Mushroom',
+    default       => 'New Buyer Enquiry â€” Good Mushroom',
 };
 $subject = clean((string)($_POST['_subject'] ?? $subject_default), 200);
 
@@ -172,7 +172,7 @@ try {
         $mail->SMTPSecure = $SMTP_PORT === 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
         $mail->CharSet    = 'UTF-8';
     } else {
-        // No SMTP configured — fall back to system mail() so dev/local still works.
+        // No SMTP configured â€” fall back to system mail() so dev/local still works.
         $mail->isMail();
     }
 
@@ -206,7 +206,7 @@ try {
 } catch (PHPMailerException $e) {
     error_log('GoodMushroom mail send failed: ' . $mail->ErrorInfo);
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 82195 99053.']);
+    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 6361621886.']);
 } catch (\Throwable $e) {
     error_log('GoodMushroom mail unexpected: ' . $e->getMessage());
     http_response_code(500);
