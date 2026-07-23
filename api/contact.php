@@ -206,7 +206,7 @@ try {
 } catch (PHPMailerException $e) {
     error_log('GoodMushroom mail send failed: ' . $mail->ErrorInfo);
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 6361621886.']);
+    echo json_encode(['ok' => false, 'error' => 'Email send failed. Please WhatsApp us at +91 8219599053.']);
 } catch (\Throwable $e) {
     error_log('GoodMushroom mail unexpected: ' . $e->getMessage());
     http_response_code(500);
