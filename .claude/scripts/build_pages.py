@@ -8,7 +8,7 @@ from pathlib import Path
 import html, json
 
 ROOT = Path(__file__).resolve().parents[2]
-WA = "916361621886"
+WA = "918219599053"
 SITE = "https://goodmushroom.in"
 GA = "G-3JPKHJHFQM"
 
@@ -80,7 +80,7 @@ def nav_html(prefix=''):
     <a href="https://wa.me/{WA}" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>krish@goodmushroom.in</span>
-      <span>+91 6361 621 886</span>
+      <span>+91 8219599053</span>
     </div>
   </div>
 </div>'''
@@ -122,7 +122,7 @@ def footer_html(prefix=''):
         <div class="foot-contact">
           <a href="mailto:krish@goodmushroom.in">krish@goodmushroom.in</a>
           <a href="mailto:anmol@goodmushroom.in">anmol@goodmushroom.in</a>
-          <a href="https://wa.me/{WA}">+91 6361 621 886</a>
+          <a href="https://wa.me/{WA}">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -445,7 +445,7 @@ PAGES.append({
           </div>
           <div>
             <div class="mono" style="color:var(--ink-light); text-transform:uppercase; letter-spacing:0.1em; font-size:var(--step--2); margin-bottom:6px;">WhatsApp</div>
-            <a href="https://wa.me/916361621886" style="font-family:var(--font-display); font-size:var(--step-1); color:var(--ink);">+91 6361 621 886</a>
+            <a href="https://wa.me/918219599053" style="font-family:var(--font-display); font-size:var(--step-1); color:var(--ink);">+91 8219599053</a>
           </div>
           <div>
             <div class="mono" style="color:var(--ink-light); text-transform:uppercase; letter-spacing:0.1em; font-size:var(--step--2); margin-bottom:6px;">Based in</div>
@@ -656,7 +656,7 @@ PAGES.append({
         </ul>
         <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
           <a href="contact.html#seller" class="btn btn-primary">Register as a seller →</a>
-          <a href="https://wa.me/916361621886" class="btn btn-outline">WhatsApp us</a>
+          <a href="https://wa.me/918219599053" class="btn btn-outline">WhatsApp us</a>
         </div>
       </div>
       <div class="editorial-image"><img src="images/hero.jpg" alt="Farmer in mushroom tunnel" /><span class="editorial-image-caption">Tunnel grower · Solan, HP</span></div>
@@ -687,7 +687,7 @@ PAGES.append({
       <p class="lede" style="color:rgba(255,255,255,0.7); margin: 24px auto 0; max-width: 56ch;">Fill out the registration form and our sourcing team will reach out on WhatsApp within 48 hours. We'll talk about your farm, your volumes, and what you need from us.</p>
       <div style="margin-top:36px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
         <a href="contact.html#seller" class="btn btn-on-dark btn-lg">Register as a seller →</a>
-        <a href="https://wa.me/916361621886" class="btn btn-outline-on-dark btn-lg">WhatsApp us</a>
+        <a href="https://wa.me/918219599053" class="btn btn-outline-on-dark btn-lg">WhatsApp us</a>
       </div>
     </div>
   </div>

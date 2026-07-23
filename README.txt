@@ -47,7 +47,7 @@ draft addressed to `krish@goodmushroom.in,anmol@goodmushroom.in`.
 
 ## WhatsApp
 
-All WhatsApp CTAs use `+91 6361 621 886` via `https://wa.me/916361621886`.
+All WhatsApp CTAs use `+91 8219599053` via `https://wa.me/918219599053`.
 Mobile pages keep the floating WhatsApp action and sticky mobile bottom bar.
 
 ## Deploy

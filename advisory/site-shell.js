@@ -41,7 +41,7 @@
       '</nav>',
       '<div class="mobile-menu-foot">',
         '<a href="/#request" class="btn btn-primary btn-lg">Request advisory →</a>',
-        '<a href="https://wa.me/916361621886" class="btn btn-outline btn-lg">Chat on WhatsApp</a>',
+        '<a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>',
       '</div>',
     '</div>'
   ].join('');
@@ -79,7 +79,7 @@
             '<h5>Contact</h5>',
             '<div class="foot-contact">',
               '<a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>',
-              '<a href="https://wa.me/916361621886">+91 6361621886</a>',
+              '<a href="https://wa.me/918219599053">+91 8219599053</a>',
               '<span>Himachal Pradesh, India</span>',
               '<span>Mon–Sat · 10am–6pm IST</span>',
             '</div>',

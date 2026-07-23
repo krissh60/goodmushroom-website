@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const showFallbackError = (form) => {
     const successEl = form.querySelector('.success-msg');
     if (successEl) {
-      successEl.textContent = '⚠ Something went wrong. Please try again, or message us on WhatsApp at +91 6361621886.';
+      successEl.textContent = '⚠ Something went wrong. Please try again, or message us on WhatsApp at +91 8219599053.';
       successEl.style.display = 'block';
       successEl.style.color = 'var(--ink-mid)';
     }
