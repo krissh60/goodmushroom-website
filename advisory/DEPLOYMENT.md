@@ -48,7 +48,7 @@ PHPMailer setup. No credentials belong in the advisory folder.
 ## Form behaviour
 
 - Fixed reports use the approved public prices.
-- The qualification call is ₹500 for 20 minutes; payment is required before scheduling.
+- The qualification call is ₹499 for 20 minutes; payment is required before scheduling.
 - Custom DPR/project advisory is **price on assessment** and has no public fixed rate.
 - The page does not promise yields, profits, funding, licences, buyer placement, purchase or
   supply/offtake outcomes.
