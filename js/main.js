@@ -103,6 +103,31 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Lead forms — POST to /api/contact.php ---------- */
   const API_ENDPOINT = '/api/contact.php';
 
+  /* ---------- Conversion attribution (no contact details sent to analytics) ---------- */
+  const trackMainEvent = (name, data = {}) => {
+    if (typeof gtag === 'function') gtag('event', name, data);
+  };
+  const currentPage = () => `${location.pathname}${location.search}`;
+  const formContext = (form) => ({
+    form_type: form.querySelector('[name="form_type"]')?.value || 'unknown',
+    product: form.querySelector('[name="product"]')?.value || 'not_specified',
+    source_page: form.querySelector('[name="source_page"]')?.value || currentPage(),
+    page_path: location.pathname
+  });
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const label = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+    if (/wa\.me\//i.test(href)) {
+      trackMainEvent('whatsapp_click', { page_path: location.pathname, link_label: label || 'WhatsApp' });
+    } else if (/request a quote/i.test(label) || /contact\.html#buyer/i.test(href)) {
+      trackMainEvent('request_quote_click', { page_path: location.pathname, link_label: label || 'Request a Quote' });
+    } else if (/apply as a supply partner|supplier application/i.test(label) || /contact\.html#seller/i.test(href)) {
+      trackMainEvent('supplier_application_click', { page_path: location.pathname, link_label: label || 'Apply as a Supply Partner' });
+    }
+  });
+
 
   const validateForm = (form) => {
     let ok = true;
@@ -145,6 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const ct = res.headers.get('content-type') || '';
         const json = ct.includes('application/json') ? await res.json() : { ok: false, error: 'Bad response' };
         if (res.ok && json.ok) {
+          const context = formContext(form);
+          const eventName = context.form_type === 'buyer'
+            ? 'buyer_form_submit'
+            : context.form_type === 'seller'
+              ? 'supplier_application_submit'
+              : context.form_type === 'report'
+                ? 'report_request_submit'
+                : 'contact_form_submit';
+          trackMainEvent(eventName, context);
+          trackMainEvent('generate_lead', { lead_channel: context.form_type, product: context.product, page_path: context.page_path });
           if (successEl) {
             successEl.textContent = form.id === 'buyer-form'
               ? '✓ Thank you. We\'ve received your enquiry and will be in touch after review.'
