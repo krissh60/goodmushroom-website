@@ -109,6 +109,14 @@
 .adv-card-detail ul{margin:0!important}.adv-card-detail li{padding:5px 0!important}.adv-card-detail li:before{content:'·'!important}
 .adv-deliverables{margin-top:24px;padding:24px;background:var(--brand-soft);border-left:3px solid var(--brand)}
 .adv-deliverables h3{margin-top:0}.adv-deliverables ul{margin:12px 0 0}.adv-deliverables li{margin-bottom:8px}
+.adv-table-wrap{overflow-x:auto;margin:24px 0 42px;border:1px solid var(--line);background:var(--white)}
+.adv-compare-table{width:100%;min-width:960px;border-collapse:collapse;font-size:var(--step--2);line-height:1.5}
+.adv-compare-table th,.adv-compare-table td{padding:16px;vertical-align:top;text-align:left;border-right:1px solid var(--line);border-bottom:1px solid var(--line-soft)}
+.adv-compare-table thead th{background:var(--brand-deep);color:var(--bone);font-family:var(--font-mono);font-size:var(--step--2);letter-spacing:.04em;text-transform:uppercase}
+.adv-compare-table tbody th{width:14%;font-family:var(--font-display);font-size:var(--step-1);font-weight:400;background:var(--bone-2)}
+.adv-compare-table tr:last-child th,.adv-compare-table tr:last-child td{border-bottom:0}.adv-compare-table th:last-child,.adv-compare-table td:last-child{border-right:0}
+.adv-table-price{display:block;margin-top:6px;font-family:var(--font-mono);font-size:var(--step--2);color:var(--brand)}
+.adv-compare-table a{text-decoration:underline;text-underline-offset:3px;color:var(--brand)}
 @media(max-width:980px){.adv-service-preview-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.adv-service-preview-head{display:block}.adv-service-preview-head p{margin-top:14px}.adv-service-preview-grid{grid-template-columns:1fr}}
 .adv-visual{max-width:1200px;margin:clamp(28px,5vw,56px) auto 0}
