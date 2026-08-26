@@ -108,6 +108,51 @@
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 
+  /* Conversion path: expose the next useful decision without forcing a visitor to scan the full page. */
+  var mobileQuick = [
+    '<div class="adv-mobile-quick" aria-label="Quick advisory actions">',
+      '<a class="adv-mobile-quick-check" data-quick-action="mobile_readiness" href="/tools/mushroom-project-readiness.html">Check readiness</a>',
+      '<a class="adv-mobile-quick-request" data-quick-action="mobile_request" href="/?service=Paid%20Qualification%20Call%20%E2%80%94%20%E2%82%B9499%20%2F%2020%20minutes#request">Request advisory</a>',
+    '</div>'
+  ].join('');
+  document.body.insertAdjacentHTML('beforeend', mobileQuick);
+
+  var isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  var hero = document.querySelector('.adv-hero');
+  if(isHome && hero){
+    hero.insertAdjacentHTML('afterend', [
+      '<section class="adv-quick-route" aria-labelledby="quick-route-title">',
+        '<div class="wrap adv-quick-route-inner">',
+          '<div class="adv-quick-route-head"><span class="eyebrow">Choose your next step</span><h2 id="quick-route-title">Get to the right answer faster.</h2></div>',
+          '<div class="adv-quick-route-links">',
+            '<a class="adv-quick-route-link" data-quick-action="home_readiness" href="/tools/mushroom-project-readiness.html"><strong>Still comparing?</strong><span>Run the readiness check →</span></a>',
+            '<a class="adv-quick-route-link" data-quick-action="home_reports" href="#services"><strong>Question defined?</strong><span>Compare fixed reports →</span></a>',
+            '<a class="adv-quick-route-link" data-quick-action="home_qualification" href="/?service=Paid%20Qualification%20Call%20%E2%80%94%20%E2%82%B9499%20%2F%2020%20minutes#request"><strong>Need a DPR?</strong><span>Book the ₹499 qualification call →</span></a>',
+          '</div>',
+        '</div>',
+      '</section>'
+    ].join(''));
+
+    var serviceMap = {
+      'Commercial Feasibility': 'Commercial Feasibility Report — ₹2,499',
+      'Buyer Intelligence': 'Buyer Intelligence Report — ₹2,999',
+      'Buyer-Readiness': 'Supplier / Buyer-Readiness Report — ₹1,999'
+    };
+    document.querySelectorAll('.adv-service-preview-card').forEach(function(card){
+      var title = card.querySelector('h3');
+      var service = title && serviceMap[title.textContent.trim()];
+      if(!service) return;
+      card.href = '/?service=' + encodeURIComponent(service) + '#request';
+      card.setAttribute('data-service', service);
+    });
+  }
+
+  document.querySelectorAll('[data-quick-action]').forEach(function(link){
+    link.addEventListener('click', function(){
+      window.gtag('event', 'advisory_quick_action_click', {action:link.getAttribute('data-quick-action'), page_path:window.location.pathname});
+    });
+  });
+
   var open = document.querySelector('.nav-hamburger');
   var menu = document.querySelector('.mobile-menu');
   var close = document.querySelector('.mobile-menu-close');
