@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -202,7 +203,7 @@ try {
         date('c') . "\t" . $form_type . "\t" . $email . "\t" . $name . "\t" . $ip . "\n",
         FILE_APPEND);
 
-    echo json_encode(['ok' => true]);
+    echo json_encode(['ok' => true, 'mail_accepted' => true]);
 } catch (PHPMailerException $e) {
     error_log('GoodMushroom mail send failed: ' . $mail->ErrorInfo);
     http_response_code(500);

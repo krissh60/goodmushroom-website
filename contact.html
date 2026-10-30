@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -40,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=8f0683e1912f" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,8 +71,8 @@
       <li><a href="about.html">About us</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-outline btn-sm">Product specs</a>
-      <a href="contact.html#buyer" class="btn btn-primary btn-sm">Request a Quote
+      <a href="contact.html" class="btn btn-outline btn-sm" data-track="specifications">Product specs</a>
+      <a href="contact.html#buyer" class="btn btn-primary btn-sm" data-track="quote">Request a Quote
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -110,8 +103,8 @@
     <a href="contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="contact.html" class="btn btn-primary btn-lg">Request a Quote →</a>
-    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="contact.html" class="btn btn-primary btn-lg" data-track="quote">Request a Quote →</a>
+    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg" data-track="whatsapp">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -126,7 +119,7 @@
       <div class="reveal">
         <span class="eyebrow">Get in touch</span>
         <h1>Quote after review.<br>Samples on an agreed timeline.</h1>
-        <p class="lede" style="margin-top:8px;font-style:italic;color:var(--ink-mid);">Request a Quote or download product specifications.</p>
+        <p class="lede" style="margin-top:8px;font-style:italic;color:var(--ink-mid);">Request a quote or ask for product specifications.</p>
         <p class="lede">Buyer enquiry form below — share your product, destination and requirements so we can review the route and confirm pricing, specifications and documentation. Or skip the form and message us on WhatsApp. A separate form is available for growers applying to our supply partnership.</p>
       </div>
       <div class="page-hero-art reveal">
@@ -138,56 +131,59 @@
 </section>
 
 <section id="contact-forms">
+  <span id="buyer"></span><span id="seller"></span>
   <div class="wrap">
     <div class="two-up">
       <div class="reveal">
         <div class="contact-tabs">
-          <button class="tab-btn active" data-tab="buyer-panel">I'm a Buyer</button>
-          <button class="tab-btn" data-tab="seller-panel">I'm a Supply Partner</button>
+          <button class="tab-btn active" data-tab="buyer-panel" aria-controls="buyer-panel" aria-pressed="true">I'm a Buyer</button>
+          <button class="tab-btn" data-tab="seller-panel" aria-controls="seller-panel" aria-pressed="false">I'm a Supply Partner</button>
         </div>
 
-        <div class="form-panel active" id="buyer-panel">
+        <div class="form-panel active" id="buyer-panel"><span id="specs"></span>
           <div class="form-card">
             <h3 class="h3" style="margin-bottom:8px;">Request a Quote</h3>
             <p style="color:var(--ink-mid); margin-bottom:24px; font-size:var(--step--1);">Tell us what you need, where you ship to, and your timeline.</p>
             <form id="buyer-form" action="/api/contact.php" method="POST" novalidate>
               <input type="hidden" name="_subject" value="New Buyer Enquiry — Good Mushroom" />
               <input type="hidden" name="form_type" value="buyer" />
+              <input type="hidden" name="request_type" value="Buyer enquiry" />
               <input type="hidden" name="source_page" value="contact.html#buyer" />
               <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
               <div class="form-row">
-                <div class="form-group"><label>Full name *</label><input type="text" name="name" required placeholder="Your name" /></div>
-                <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Company (optional)" /></div>
+                <div class="form-group"><label for="enquiry-field-1">Full name *</label><input id="enquiry-field-1" type="text" name="name" required placeholder="Your name" /></div>
+                <div class="form-group"><label for="enquiry-field-2">Company</label><input id="enquiry-field-2" type="text" name="company" placeholder="Company (optional)" /></div>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="you@email.com" /></div>
-                <div class="form-group"><label>WhatsApp / phone</label><input type="tel" name="phone" placeholder="+1 555 123 4567" /></div>
+                <div class="form-group"><label for="enquiry-field-3">Email *</label><input id="enquiry-field-3" type="email" name="email" required placeholder="you@email.com" /></div>
+                <div class="form-group"><label for="enquiry-field-4">WhatsApp / phone</label><input id="enquiry-field-4" type="tel" name="phone" placeholder="+1 555 123 4567" /></div>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>Country *</label>
-                  <select name="country" required>
+                <div class="form-group"><label for="enquiry-field-5">Country *</label>
+                  <select id="enquiry-field-5" name="country" required>
                     <option value="">Select country…</option><option>United States</option><option>United Kingdom</option><option>Germany</option><option>France</option><option>Netherlands</option><option>Australia</option><option>Canada</option><option>UAE / Dubai</option><option>Japan</option><option>South Korea</option><option>Singapore</option><option>China</option><option>India</option><option>Other</option>
                   </select>
                 </div>
-                <div class="form-group"><label>Buyer type</label>
-                  <select name="buyer_type"><option value="">Select…</option><option>Importer / Distributor</option><option>Supplement Brand</option><option>Restaurant / Food Service</option><option>Retail / Supermarket</option><option>Wellness / Spa Brand</option><option>Other</option></select>
+                <div class="form-group"><label for="enquiry-field-6">Buyer type</label>
+                  <select id="enquiry-field-6" name="buyer_type"><option value="">Select…</option><option>Importer / Distributor</option><option>Supplement Brand</option><option>Restaurant / Food Service</option><option>Retail / Supermarket</option><option>Wellness / Spa Brand</option><option>Other</option></select>
                 </div>
               </div>
-              <div class="form-group"><label>Product(s) *</label>
-                <select name="product" required>
+              <div class="form-group"><label for="enquiry-field-7">Product(s) *</label>
+                <select id="enquiry-field-7" name="product" required>
                   <option value="">Select product…</option><option>Cordyceps Militaris</option><option>Shiitake</option><option>Lion's Mane</option><option>Oyster Mushrooms</option><option>Reishi / Ganoderma</option><option>Button &amp; Specialty</option><option>Dual-Extract Powders</option><option>Reishi Spore Oil</option><option>Mushroom Blends (custom)</option><option>Ashwagandha</option><option>Tulsi</option><option>Shatavari / Brahmi</option><option>Multiple — described below</option>
                 </select>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>Quantity</label><input type="text" name="quantity" placeholder="e.g. 50 kg / month" /></div>
-                <div class="form-group"><label>Frequency</label>
-                  <select name="frequency"><option value="">Select…</option><option>One-time trial</option><option>Monthly recurring</option><option>Quarterly</option><option>Annual contract</option><option>Not sure</option></select>
+                <div class="form-group"><label for="enquiry-field-8">Quantity</label><input id="enquiry-field-8" type="text" name="quantity" placeholder="e.g. 50 kg / month" /></div>
+                <div class="form-group"><label for="enquiry-field-9">Frequency</label>
+                  <select id="enquiry-field-9" name="frequency"><option value="">Select…</option><option>One-time trial</option><option>Monthly recurring</option><option>Quarterly</option><option>Annual contract</option><option>Not sure</option></select>
                 </div>
               </div>
-              <div class="form-group"><label>Message</label><textarea name="message" placeholder="Spec, certifications needed (organic, kosher), packaging, target market, timeline…"></textarea></div>
+              <div class="form-group"><label for="buyer-format">Material form</label><select id="buyer-format" name="material_form"><option value="">Select if known…</option><option>Whole or sliced</option><option>Powder</option><option>Extract</option><option>Fresh</option><option>Other</option><option>Help me specify</option></select></div>
+              <div class="form-group"><label for="enquiry-field-10">Message</label><textarea id="enquiry-field-10" name="message" placeholder="Spec, certifications needed, packaging, target market, timeline…"></textarea></div>
               <button type="submit" class="btn btn-primary btn-lg btn-block">Request a Quote →</button>
-              <p class="form-note">A member of the team reviews each enquiry and confirms the next step. Your details are never shared.</p>
-              <div class="success-msg">✓ Thank you. We've received your enquiry and will be in touch after review.</div>
+              <p class="form-note">A member of the team reviews each enquiry and confirms the next step. Your details are used to review and respond to your enquiry.</p>
+              <div class="success-msg" role="status" aria-live="polite">✓ Thank you. We've received your enquiry and will be in touch after review.</div>
             </form>
           </div>
         </div>
@@ -202,29 +198,29 @@
               <input type="hidden" name="source_page" value="contact.html#seller" />
               <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
               <div class="form-row">
-                <div class="form-group"><label>Your name *</label><input type="text" name="name" required placeholder="Rajesh Kumar" /></div>
-                <div class="form-group"><label>WhatsApp / phone *</label><input type="tel" name="phone" required placeholder="Your WhatsApp number" /></div>
+                <div class="form-group"><label for="enquiry-field-11">Your name *</label><input id="enquiry-field-11" type="text" name="name" required placeholder="Rajesh Kumar" /></div>
+                <div class="form-group"><label for="enquiry-field-12">WhatsApp / phone *</label><input id="enquiry-field-12" type="tel" name="phone" required placeholder="Your WhatsApp number" /></div>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Optional" /></div>
-                <div class="form-group"><label>State *</label>
-                  <select name="state" required><option value="">Select state…</option><option>Himachal Pradesh</option><option>Uttarakhand</option><option>Punjab</option><option>Haryana</option><option>Maharashtra</option><option>Karnataka</option><option>Kerala</option><option>Tamil Nadu</option><option>Andhra Pradesh</option><option>Telangana</option><option>Odisha</option><option>West Bengal</option><option>Assam / Northeast</option><option>Madhya Pradesh</option><option>Other</option></select>
+                <div class="form-group"><label for="enquiry-field-13">Email</label><input id="enquiry-field-13" type="email" name="email" placeholder="Optional" /></div>
+                <div class="form-group"><label for="enquiry-field-14">State *</label>
+                  <select id="enquiry-field-14" name="state" required><option value="">Select state…</option><option>Himachal Pradesh</option><option>Uttarakhand</option><option>Punjab</option><option>Haryana</option><option>Maharashtra</option><option>Karnataka</option><option>Kerala</option><option>Tamil Nadu</option><option>Andhra Pradesh</option><option>Telangana</option><option>Odisha</option><option>West Bengal</option><option>Assam / Northeast</option><option>Madhya Pradesh</option><option>Other</option></select>
                 </div>
               </div>
-              <div class="form-group"><label>District / tehsil</label><input type="text" name="district" placeholder="e.g. Kullu, Manali area" /></div>
+              <div class="form-group"><label for="enquiry-field-15">District / tehsil</label><input id="enquiry-field-15" type="text" name="district" placeholder="e.g. Kullu, Manali area" /></div>
               <div class="form-row">
-                <div class="form-group"><label>What do you grow? *</label>
-                  <select name="product" required><option value="">Select…</option><option>Oyster Mushrooms</option><option>Shiitake</option><option>Lion's Mane</option><option>Cordyceps Militaris</option><option>Button / Crimini</option><option>Reishi / Ganoderma</option><option>Wild Collected</option><option>Medicinal Herbs</option><option>Multiple — described below</option></select>
+                <div class="form-group"><label for="enquiry-field-16">What do you grow? *</label>
+                  <select id="enquiry-field-16" name="product" required><option value="">Select…</option><option>Oyster Mushrooms</option><option>Shiitake</option><option>Lion's Mane</option><option>Cordyceps Militaris</option><option>Button / Crimini</option><option>Reishi / Ganoderma</option><option>Wild Collected</option><option>Medicinal Herbs</option><option>Multiple — described below</option></select>
                 </div>
-                <div class="form-group"><label>Monthly volume</label><input type="text" name="capacity" placeholder="e.g. 200 kg/month" /></div>
+                <div class="form-group"><label for="enquiry-field-17">Monthly volume</label><input id="enquiry-field-17" type="text" name="capacity" placeholder="e.g. 200 kg/month" /></div>
               </div>
-              <div class="form-group"><label>Experience</label>
-                <select name="experience"><option value="">Select…</option><option>Just starting out</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select>
+              <div class="form-group"><label for="enquiry-field-18">Experience</label>
+                <select id="enquiry-field-18" name="experience"><option value="">Select…</option><option>Just starting out</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select>
               </div>
-              <div class="form-group"><label>About your farm</label><textarea name="message" placeholder="Substrate, growing method, current buyers, certifications, what support you'd want from us…"></textarea></div>
+              <div class="form-group"><label for="enquiry-field-19">About your farm</label><textarea id="enquiry-field-19" name="message" placeholder="Substrate, growing method, current buyers, certifications, what support you'd want from us…"></textarea></div>
               <button type="submit" class="btn btn-brand btn-lg btn-block">Apply as a Supply Partner →</button>
               <p class="form-note">Sourcing team will contact you after review</p>
-              <div class="success-msg">✓ Thank you for registering. Our team will reach out after review.</div>
+              <div class="success-msg" role="status" aria-live="polite">✓ Thank you for registering. Our team will reach out after review.</div>
             </form>
           </div>
         </div>
@@ -241,7 +237,7 @@
           </div>
           <div>
             <div class="mono" style="color:var(--ink-light); text-transform:uppercase; letter-spacing:0.1em; font-size:var(--step--2); margin-bottom:6px;">WhatsApp</div>
-            <a href="https://wa.me/918219599053" style="font-family:var(--font-display); font-size:var(--step-1); color:var(--ink);">+91 8219599053</a>
+            <a href="https://wa.me/918219599053" style="font-family:var(--font-display); font-size:var(--step-1); color:var(--ink);" data-track="whatsapp">+91 8219599053</a>
           </div>
           <div>
             <div class="mono" style="color:var(--ink-light); text-transform:uppercase; letter-spacing:0.1em; font-size:var(--step--2); margin-bottom:6px;">Based in</div>
@@ -294,7 +290,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -307,7 +303,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -315,11 +311,11 @@
 </a>
 
 <nav class="smb" aria-label="Quick contact">
-  <a href="contact.html#buyer"  class="primary">Quote</a>
-  <a href="contact.html#specs" class="brand">Specs</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="contact.html#buyer"  class="primary" data-track="quote">Quote</a>
+  <a href="contact.html#specs" class="brand" data-track="specifications">Specs</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp">WhatsApp</a>
 </nav>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>

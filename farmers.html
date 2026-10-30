@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -40,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=8f0683e1912f" />
 
   <script type="application/ld+json">
 {
@@ -143,7 +136,7 @@
     </ul>
     <div class="nav-cta">
       <a href="contact.html#seller" class="btn btn-outline btn-sm">Register crop</a>
-      <a href="contact.html#seller" class="btn btn-primary btn-sm">Apply as a Supply Partner
+      <a href="contact.html#seller" class="btn btn-primary btn-sm" data-track="supplier">Apply as a Supply Partner
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -174,8 +167,8 @@
     <a href="contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="contact.html#seller" class="btn btn-primary btn-lg">Apply as a Supply Partner &rarr;</a>
-    <a href="https://wa.me/918219599053?text=Hi%20I%20grow%20mushrooms%20in%20India%20and%20want%20to%20sell%20my%20crop" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="contact.html#seller" class="btn btn-primary btn-lg" data-track="supplier">Apply as a Supply Partner &rarr;</a>
+    <a href="https://wa.me/918219599053?text=Hi%20I%20grow%20mushrooms%20in%20India%20and%20want%20to%20sell%20my%20crop" class="btn btn-outline btn-lg" data-track="whatsapp">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -197,7 +190,7 @@
           <h1>Where to sell mushrooms in India <em>as a supply partner.</em></h1>
           <p class="lede">If you grow Cordyceps militaris, Lion's Mane, Reishi, Oyster or Shiitake, Good Mushroom buys selected crops for structured B2B routes. Share the species, form, location, volume and available evidence first; we assess the fit before agreeing commercial terms.</p>
           <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="contact.html#seller" class="btn btn-primary btn-lg">Apply as a Supply Partner &rarr;</a>
+            <a href="contact.html#seller" class="btn btn-primary btn-lg" data-track="supplier">Apply as a Supply Partner &rarr;</a>
             <a href="#what-we-check" class="btn btn-outline btn-lg">See what buyers check</a>
           </div>
         </div>
@@ -212,20 +205,21 @@
               <input type="hidden" name="source_page" value="farmers.html" />
               <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
               <div class="form-row">
-                <div class="form-group"><label>Your name *</label><input type="text" name="name" required placeholder="Your name" /></div>
-                <div class="form-group"><label>WhatsApp / phone *</label><input type="tel" name="phone" required placeholder="+91..." /></div>
+                <div class="form-group"><label for="enquiry-field-1">Your name *</label><input id="enquiry-field-1" type="text" name="name" required placeholder="Your name" /></div>
+                <div class="form-group"><label for="enquiry-field-2">WhatsApp / phone *</label><input id="enquiry-field-2" type="tel" name="phone" required placeholder="+91..." /></div>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>State *</label><input type="text" name="state" required placeholder="State" /></div>
-                <div class="form-group"><label>What do you grow? *</label><input type="text" name="product" required placeholder="Species / format" /></div>
+                <div class="form-group"><label for="enquiry-field-3">State *</label><input id="enquiry-field-3" type="text" name="state" required placeholder="State" /></div>
+                <div class="form-group"><label for="enquiry-field-4">What do you grow? *</label><input id="enquiry-field-4" type="text" name="product" required placeholder="Species / format" /></div>
               </div>
-              <div class="form-group"><label>Monthly volume</label><input type="text" name="capacity" placeholder="e.g. 200 kg/month" /></div>
-              <div class="form-group"><label>Crop details</label><textarea name="message" placeholder="Fresh or dried, current stage, photos or lab reports available..."></textarea></div>
+              <div class="form-group"><label for="enquiry-field-5">Monthly volume</label><input id="enquiry-field-5" type="text" name="capacity" placeholder="e.g. 200 kg/month" /></div>
+              <div class="form-row"><div class="form-group"><label for="crop-stage">Production stage</label><select id="crop-stage" name="production_stage"><option value="">Select if known…</option><option>Planning</option><option>Trial crop</option><option>Currently harvesting</option><option>Repeat supply available</option></select></div><div class="form-group"><label for="crop-form">Crop form</label><select id="crop-form" name="crop_form"><option value="">Select if known…</option><option>Fresh</option><option>Dried</option><option>Powder</option><option>Other</option></select></div></div>
+              <div class="form-group"><label for="enquiry-field-6">Crop details</label><textarea id="enquiry-field-6" name="message" placeholder="District, fresh or dried, harvest timing, and photos or lab reports available..."></textarea></div>
               <button type="submit" class="btn btn-brand btn-lg btn-block">Apply as a Supply Partner &rarr;</button>
               <p class="form-note">We confirm crop fit before discussing purchase terms.</p>
-              <div class="success-msg">Thank you. Your application has been received and will be reviewed.</div>
+              <div class="success-msg" role="status" aria-live="polite">Thank you. Your application has been received and will be reviewed.</div>
             </form>
-            <p style="margin-top:14px; font-size:var(--step--2); color:var(--ink-mid);">Prefer WhatsApp? <a href="https://wa.me/918219599053?text=Hi%20I%20want%20to%20sell%20my%20mushroom%20crop">Message the sourcing team</a>.</p>
+            <p style="margin-top:14px; font-size:var(--step--2); color:var(--ink-mid);">Prefer WhatsApp? <a href="https://wa.me/918219599053?text=Hi%20I%20want%20to%20sell%20my%20mushroom%20crop" data-track="whatsapp">Message the sourcing team</a>.</p>
           </div>
         </div>
       </div>
@@ -235,11 +229,11 @@
   <section class="sec-tight" style="background:var(--bone-2); border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="cat-grid reveal-stagger" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-        <a href="products/cordyceps.html#sell" class="cat-card"><div class="cat-card-body"><h3>Cordyceps militaris</h3><span class="cat-card-latin">Fresh, dried, powder or extract route</span><div class="cat-card-meta"><span>High documentation need</span><span>Batch quality matters</span></div></div></a>
-        <a href="products/lions-mane.html#sell" class="cat-card"><div class="cat-card-body"><h3>Lion's Mane</h3><span class="cat-card-latin">Whole fruiting body, powder, extract</span><div class="cat-card-meta"><span>Colour and drying control</span><span>Nootropic buyer route</span></div></div></a>
-        <a href="products/reishi.html#sell" class="cat-card"><div class="cat-card-body"><h3>Reishi / Ganoderma</h3><span class="cat-card-latin">Slices, powder, extract, spores</span><div class="cat-card-meta"><span>Dried medicinal route</span><span>Assay clarity needed</span></div></div></a>
-        <a href="products/oyster.html#sell" class="cat-card"><div class="cat-card-body"><h3>Oyster mushrooms</h3><span class="cat-card-latin">Fresh, dried, sliced, powder</span><div class="cat-card-meta"><span>Cold-chain or drying route</span><span>Weekly volume matters</span></div></div></a>
-        <a href="products/shiitake.html#sell" class="cat-card"><div class="cat-card-body"><h3>Shiitake</h3><span class="cat-card-latin">Fresh, dried, sliced, powder</span><div class="cat-card-meta"><span>Donko/koshin grade</span><span>Moisture and sorting</span></div></div></a>
+        <a href="products/cordyceps.html#sell" class="cat-card" data-track="ingredient" data-product="cordyceps"><div class="cat-card-body"><h3>Cordyceps militaris</h3><span class="cat-card-latin">Fresh, dried, powder or extract route</span><div class="cat-card-meta"><span>High documentation need</span><span>Batch quality matters</span></div></div></a>
+        <a href="products/lions-mane.html#sell" class="cat-card" data-track="ingredient" data-product="lions-mane"><div class="cat-card-body"><h3>Lion's Mane</h3><span class="cat-card-latin">Whole fruiting body, powder, extract</span><div class="cat-card-meta"><span>Colour and drying control</span><span>Nootropic buyer route</span></div></div></a>
+        <a href="products/reishi.html#sell" class="cat-card" data-track="ingredient" data-product="reishi"><div class="cat-card-body"><h3>Reishi / Ganoderma</h3><span class="cat-card-latin">Slices, powder, extract, spores</span><div class="cat-card-meta"><span>Dried medicinal route</span><span>Assay clarity needed</span></div></div></a>
+        <a href="products/oyster.html#sell" class="cat-card" data-track="ingredient" data-product="oyster"><div class="cat-card-body"><h3>Oyster mushrooms</h3><span class="cat-card-latin">Fresh, dried, sliced, powder</span><div class="cat-card-meta"><span>Cold-chain or drying route</span><span>Weekly volume matters</span></div></div></a>
+        <a href="products/shiitake.html#sell" class="cat-card" data-track="ingredient" data-product="shiitake"><div class="cat-card-body"><h3>Shiitake</h3><span class="cat-card-latin">Fresh, dried, sliced, powder</span><div class="cat-card-meta"><span>Donko/koshin grade</span><span>Moisture and sorting</span></div></div></a>
       </div>
     </div>
   </section>
@@ -382,8 +376,8 @@
             <p class="lede">Share your crop details, monthly volume and photos. If the crop fits an active route, we will discuss the next step. If not, we will point you toward the readiness gap.</p>
           </div>
           <div class="final-cta-actions">
-            <a href="contact.html#seller" class="btn btn-on-dark btn-lg">Apply as a Supply Partner &rarr;</a>
-            <a href="https://wa.me/918219599053?text=Hi%20I%20grow%20mushrooms%20in%20India%20and%20want%20to%20sell%20my%20crop" class="btn btn-outline-on-dark btn-lg">WhatsApp +91 8219599053</a>
+            <a href="contact.html#seller" class="btn btn-on-dark btn-lg" data-track="supplier">Apply as a Supply Partner &rarr;</a>
+            <a href="https://wa.me/918219599053?text=Hi%20I%20grow%20mushrooms%20in%20India%20and%20want%20to%20sell%20my%20crop" class="btn btn-outline-on-dark btn-lg" data-track="whatsapp">WhatsApp +91 8219599053</a>
           </div>
         </div>
       </div>
@@ -428,7 +422,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon-Sat &middot; 10am-6pm IST</span>
         </div>
@@ -441,7 +435,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -451,9 +445,9 @@
 <nav class="smb" aria-label="Quick contact">
   <a href="contact.html#seller" class="primary">Sell crop</a>
   <a href="reports.html" class="brand">Reports</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp">WhatsApp</a>
 </nav>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>

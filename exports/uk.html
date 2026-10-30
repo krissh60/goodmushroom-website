@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="../js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -40,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style.css?v=8f0683e1912f" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +48,6 @@
 }
   </script>
 </head>
-<body>
 <body>
 
 <nav class="nav" aria-label="Main">
@@ -73,8 +65,8 @@
       <li><a href="../about.html">About us</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="../contact.html" class="btn btn-outline btn-sm">Product specs</a>
-      <a href="../contact.html#buyer" class="btn btn-primary btn-sm">Request a Quote
+      <a href="../contact.html" class="btn btn-outline btn-sm" data-track="specifications">Product specs</a>
+      <a href="../contact.html#buyer" class="btn btn-primary btn-sm" data-track="quote">Request a Quote
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -105,8 +97,8 @@
     <a href="../contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="../contact.html" class="btn btn-primary btn-lg">Request a Quote →</a>
-    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="../contact.html" class="btn btn-primary btn-lg" data-track="quote">Request a Quote →</a>
+    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg" data-track="whatsapp">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -124,16 +116,16 @@
     <div class="page-hero-inner">
       <div class="reveal">
         <span class="eyebrow">Export market</span>
-        <h1>United Kingdom<br><em>🇬🇧 · London · Manchester · Birmingham</em></h1>
+        <h1>United Kingdom<br><em>Ingredient sourcing enquiries</em></h1>
         <p class="lede">Functional mushroom ingredient sourcing for UK buyer enquiries. Product format, documentation and destination requirements are reviewed before quoting.</p>
         <div style="margin-top: 32px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="../contact.html#buyer" class="btn btn-primary">Get a quote for United Kingdom →</a>
-          <a href="https://wa.me/918219599053" class="btn btn-outline">WhatsApp us</a>
+          <a href="../contact.html#buyer" class="btn btn-primary" data-track="quote">Get a quote for United Kingdom →</a>
+          <a href="https://wa.me/918219599053" class="btn btn-outline" data-track="whatsapp">WhatsApp us</a>
         </div>
       </div>
       <div class="page-hero-art reveal">
         <picture><source srcset="../images/shiitake.webp" type="image/webp"><img src="../images/shiitake.jpg" alt="Export to United Kingdom" loading="eager"  width="1200" height="848" /></picture>
-        <span class="page-hero-art-caption">Shipping · London</span>
+        <span class="page-hero-art-caption">Destination route reviewed on enquiry</span>
       </div>
     </div>
   </div>
@@ -149,7 +141,7 @@
         <div class="spec-list" style="margin-top: 28px;">
           <div class="spec-row"><div class="spec-key">Destination review</div><div class="spec-val">Import rules and buyer documentation confirmed for the selected route</div></div>
           <div class="spec-row"><div class="spec-key">Freight</div><div class="spec-val">Air or sea route confirmed case by case for the product, quantity and destination.</div></div>
-          <div class="spec-row"><div class="spec-key">Cities served</div><div class="spec-val">London · Manchester · Birmingham</div></div>
+          <div class="spec-row"><div class="spec-key">Delivery location</div><div class="spec-val">Share the destination city and delivery point so the route can be assessed.</div></div>
         </div>
       </div>
       <div class="reveal">
@@ -164,26 +156,39 @@
   </div>
 </section>
 
+<section id="buyer-route-checklist">
+  <div class="wrap">
+    <div class="form-card reveal">
+      <span class="eyebrow">United Kingdom buyer checklist</span>
+      <h2 class="h3">Prepare the destination review</h2>
+      <p>Specify Great Britain or Northern Ireland, the ingredient format and whether it is intended for food or supplement use. Ask the importer to confirm the appropriate composition and labelling review.</p>
+      <p><a href="https://www.gov.uk/government/publications/food-supplements-guidance-for-businesses/food-supplements" target="_blank" rel="noopener">UK government food supplement guidance ↗</a></p>
+      <p>Check current requirements with your importer for the specific product before committing to an order. A destination enquiry does not establish product approval or an available shipping route.</p>
+      <a href="../contact.html#buyer" class="btn btn-primary" data-track="quote">Discuss a United Kingdom requirement →</a>
+    </div>
+  </div>
+</section>
+
 <section class="sec-bone-2">
   <div class="wrap">
     <header class="sec-head reveal">
       <div><span class="eyebrow">United Kingdom route</span><h2 class="h2">Product routes<br>to evaluate.</h2></div>
-      <div class="sec-head-end"><p>The four product lines that move most consistently into United Kingdom. Each links to its product page with full specs.</p></div>
+      <div class="sec-head-end"><p>Explore these product lines and share your intended use, destination and required documents. Availability and route-specific specifications are confirmed during review.</p></div>
     </header>
     <div class="cat-grid reveal-stagger">
-      <a href="../products/cordyceps.html" class="cat-card">
+      <a href="../products/cordyceps.html" class="cat-card" data-track="ingredient" data-product="cordyceps">
         <div class="cat-card-image"><picture><source srcset="../images/cordyceps-extract.webp" type="image/webp"><img src="../images/cordyceps-extract.jpg" alt="Cordyceps militaris extract and fruiting bodies" loading="lazy" decoding="async" width="1536" height="1024" /></picture><span class="cat-card-tag">Route confirmed on quote</span></div>
         <div class="cat-card-body"><h3>Cordyceps</h3><span class="cat-card-latin">Cordyceps militaris</span><div class="cat-card-meta"><span>Batch-specific testing; destination checked</span><span class="arr">→</span></div></div>
       </a>
-      <a href="../products/lions-mane.html" class="cat-card">
+      <a href="../products/lions-mane.html" class="cat-card" data-track="ingredient" data-product="lions-mane">
         <div class="cat-card-image"><picture><source srcset="../images/lions-mane.webp" type="image/webp"><img src="../images/lions-mane.jpg" alt="Lion's Mane mushroom" loading="lazy"  width="1200" height="675" /></picture><span class="cat-card-tag">Format confirmed on quote</span></div>
         <div class="cat-card-body"><h3>Lion's Mane</h3><span class="cat-card-latin">Hericium erinaceus</span><div class="cat-card-meta"><span>Testing scope confirmed by route</span><span class="arr">→</span></div></div>
       </a>
-      <a href="../products/reishi.html" class="cat-card">
+      <a href="../products/reishi.html" class="cat-card" data-track="ingredient" data-product="reishi">
         <div class="cat-card-image"><picture><source srcset="../images/reishi.webp" type="image/webp"><img src="../images/reishi.jpg" alt="Reishi mushroom" loading="lazy"  width="1200" height="773" /></picture><span class="cat-card-tag">Testing by specification</span></div>
         <div class="cat-card-body"><h3>Reishi</h3><span class="cat-card-latin">Ganoderma lucidum</span><div class="cat-card-meta"><span>Dual extract · spore oil</span><span class="arr">→</span></div></div>
       </a>
-      <a href="../products/extracts-dual.html" class="cat-card">
+      <a href="../products/extracts-dual.html" class="cat-card" data-track="ingredient" data-product="extracts-dual">
         <div class="cat-card-image"><picture><source srcset="../images/extract-powder-capsules.webp" type="image/webp"><img src="../images/extract-powder-capsules.jpg" alt="Dual-extract mushroom powder and capsule formats" loading="lazy" decoding="async" width="1599" height="900" /></picture><span class="cat-card-tag">Format scope on quote</span></div>
         <div class="cat-card-body"><h3>Dual-Extract Powders</h3><span class="cat-card-latin">Water + alcohol route</span><div class="cat-card-meta"><span>Process and testing by specification</span><span class="arr">→</span></div></div>
       </a>
@@ -198,8 +203,8 @@
       <h2 class="h1" style="color: var(--bone); margin-top: 20px;">Quote after review.<br><em>Samples on an agreed timeline</em>.</h2>
       <p class="lede" style="color: rgba(255,255,255,0.7); margin: 24px auto 0; max-width: 56ch;">Tell us your product, volume and destination. Pricing, current timeline and available documentation are confirmed after route review.</p>
       <div style="margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="../contact.html#buyer" class="btn btn-on-dark btn-lg">Request a Quote →</a>
-        <a href="https://wa.me/918219599053" class="btn btn-outline-on-dark btn-lg">WhatsApp us</a>
+        <a href="../contact.html#buyer" class="btn btn-on-dark btn-lg" data-track="quote">Request a Quote →</a>
+        <a href="https://wa.me/918219599053" class="btn btn-outline-on-dark btn-lg" data-track="whatsapp">WhatsApp us</a>
       </div>
     </div>
   </div>
@@ -241,7 +246,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -254,7 +259,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -262,11 +267,11 @@
 </a>
 
 <nav class="smb" aria-label="Quick contact">
-  <a href="../contact.html#buyer"  class="primary">Quote</a>
-  <a href="../contact.html#specs" class="brand">Specs</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="../contact.html#buyer"  class="primary" data-track="quote">Quote</a>
+  <a href="../contact.html#specs" class="brand" data-track="specifications">Specs</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp">WhatsApp</a>
 </nav>
 
-<script src="../js/main.js" defer></script>
+<script src="../js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>

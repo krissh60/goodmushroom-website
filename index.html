@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -43,7 +36,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="preload" as="image" href="images/homepage-banner.webp" type="image/webp" fetchpriority="high" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=8f0683e1912f" />
 
   <script type="application/ld+json">
   {
@@ -128,8 +121,8 @@
       <li><a href="about.html">About us</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-outline btn-sm">Product specs</a>
-      <a href="contact.html#buyer" class="btn btn-primary btn-sm">Request a Quote
+      <a href="contact.html" class="btn btn-outline btn-sm" data-track="specifications">Product specs</a>
+      <a href="contact.html#buyer" class="btn btn-primary btn-sm" data-track="quote">Request a Quote
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -161,8 +154,8 @@
     <a href="contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="contact.html#buyer" class="btn btn-primary btn-lg">Request a Quote →</a>
-    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="contact.html#buyer" class="btn btn-primary btn-lg" data-track="quote">Request a Quote →</a>
+    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg" data-track="whatsapp">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -185,11 +178,11 @@
           Bulk supply solutions for nutraceutical, supplement, pharmaceutical and private-label buyers — with supplier-route sourcing, quality review and documentation planned around the specific buyer brief.
         </p>
         <div class="hero-cta">
-          <a href="contact.html#buyer" class="btn btn-primary btn-lg">
+          <a href="contact.html#buyer" class="btn btn-primary btn-lg" data-track="quote">
             Request a Quote
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
-          <a href="contact.html#specs" class="btn btn-outline btn-lg">Download product specifications</a>
+          <a href="contact.html#specs" class="btn btn-outline btn-lg" data-track="specifications">Request product specifications</a>
         </div>
       </div>
 
@@ -235,7 +228,7 @@
         <p style="color:var(--ink-mid); margin-bottom:12px;">Cordyceps militaris, lion&rsquo;s mane, reishi, shiitake, oyster — whole, powder or dual-extract. COA where commissioned for the relevant route. Quote after review.</p>
         <span class="link-arrow">Request a Quote <span class="arr">→</span></span>
       </a>
-      <a href="farmers.html" class="form-card" style="display:block; text-decoration:none; color:inherit; border-left:4px solid var(--brand);">
+      <a href="farmers.html" class="form-card" style="display:block; text-decoration:none; color:inherit; border-left:4px solid var(--brand);" data-track="supplier">
         <div class="mono" style="color:var(--ink-light); text-transform:uppercase; letter-spacing:0.1em; font-size:var(--step--2); margin-bottom:6px;">I&rsquo;m a farmer / grower</div>
         <h3 class="h3" style="margin-bottom:8px;">I grow mushrooms in India — I want to sell my crop.</h3>
         <p style="color:var(--ink-mid); margin-bottom:12px;">We buy selected cordyceps, lion&rsquo;s mane, oyster, shiitake and reishi crops from Indian growers when quality, location, volume and buyer route fit.</p>
@@ -375,7 +368,7 @@
     </header>
 
     <div class="cat-grid reveal-stagger">
-      <a href="products/cordyceps.html" class="cat-card">
+      <a href="products/cordyceps.html" class="cat-card" data-track="ingredient" data-product="cordyceps">
         <div class="cat-card-image">
           <picture><source srcset="images/cordyceps-extract.webp" type="image/webp"><img src="images/cordyceps-extract.jpg" alt="Cordyceps militaris fruiting bodies and extract route" loading="lazy" decoding="async" width="1536" height="1024" /></picture>
           <span class="cat-card-tag">Whole fruiting body</span>
@@ -387,7 +380,7 @@
         </div>
       </a>
 
-      <a href="products/shiitake.html" class="cat-card">
+      <a href="products/shiitake.html" class="cat-card" data-track="ingredient" data-product="shiitake">
         <div class="cat-card-image">
           <picture><source srcset="images/shiitake.webp" type="image/webp"><img src="images/shiitake.jpg" alt="Shiitake mushroom bulk supply — dried, sliced and powder grades" loading="lazy"  width="1200" height="848" /></picture>
           <span class="cat-card-tag">Donko · Koshin</span>
@@ -399,7 +392,7 @@
         </div>
       </a>
 
-      <a href="products/lions-mane.html" class="cat-card">
+      <a href="products/lions-mane.html" class="cat-card" data-track="ingredient" data-product="lions-mane">
         <div class="cat-card-image">
           <picture><source srcset="images/lions-mane.webp" type="image/webp"><img src="images/lions-mane.jpg" alt="Lion's Mane (Hericium erinaceus) bulk ingredient for nootropic supplements" loading="lazy"  width="1200" height="675" /></picture>
           <span class="cat-card-tag">Extract route on quote</span>
@@ -411,7 +404,7 @@
         </div>
       </a>
 
-      <a href="products/oyster.html" class="cat-card">
+      <a href="products/oyster.html" class="cat-card" data-track="ingredient" data-product="oyster">
         <div class="cat-card-image">
           <picture><source srcset="images/oyster.webp" type="image/webp"><img src="images/oyster.jpg" alt="Oyster mushroom (Pleurotus) bulk supply — pearl, pink, blue and king" loading="lazy"  width="1200" height="800" /></picture>
           <span class="cat-card-tag">Dried &amp; powder</span>
@@ -423,7 +416,7 @@
         </div>
       </a>
 
-      <a href="products/reishi.html" class="cat-card">
+      <a href="products/reishi.html" class="cat-card" data-track="ingredient" data-product="reishi">
         <div class="cat-card-image">
           <picture><source srcset="images/reishi.webp" type="image/webp"><img src="images/reishi.jpg" alt="Reishi (Ganoderma lucidum) extract and CO₂ spore oil — bulk supply" loading="lazy"  width="1200" height="773" /></picture>
           <span class="cat-card-tag">Testing by specification</span>
@@ -435,7 +428,7 @@
         </div>
       </a>
 
-      <a href="products/button.html" class="cat-card">
+      <a href="products/button.html" class="cat-card" data-track="ingredient" data-product="button">
         <div class="cat-card-image">
           <picture><source srcset="images/button.webp" type="image/webp"><img src="images/button.jpg" alt="Button, crimini and portobello mushrooms — bulk ingredient supply from India" loading="lazy"  width="1200" height="1200" /></picture>
           <span class="cat-card-tag">Dried · Brined</span>
@@ -447,7 +440,7 @@
         </div>
       </a>
 
-      <a href="products/extracts-dual.html" class="cat-card">
+      <a href="products/extracts-dual.html" class="cat-card" data-track="ingredient" data-product="extracts-dual">
         <div class="cat-card-image">
           <picture><source srcset="images/extract-powder-capsules.webp" type="image/webp"><img src="images/extract-powder-capsules.jpg" alt="Dual-extract mushroom powder and capsule formats" loading="lazy" decoding="async" width="1599" height="900" /></picture>
           <span class="cat-card-tag">Scope confirmed on quote</span>
@@ -459,7 +452,7 @@
         </div>
       </a>
 
-      <a href="products/ashwagandha.html" class="cat-card">
+      <a href="products/ashwagandha.html" class="cat-card" data-track="ingredient" data-product="ashwagandha">
         <div class="cat-card-image">
           <picture><source srcset="images/ashwagandha-roots-in-hand.webp" type="image/webp"><img src="images/ashwagandha-roots-in-hand.jpg" alt="Ashwagandha roots under quality inspection" loading="lazy" decoding="async" width="1599" height="900" /></picture>
           <span class="cat-card-tag">Documentation by route</span>
@@ -567,8 +560,8 @@
         <p class="lede" style="margin-top:24px;">If you grow mushrooms in India and want to sell your crop, Good Mushroom buys selected Cordyceps militaris, Lion&rsquo;s Mane, Oyster, Shiitake and Reishi crops when they pass quality and buyer-route checks.</p>
         <p>Commercial terms depend on species, grade, location, route, documentation and current buyer demand. New growers can also use our reports or advisory path to understand readiness gaps before scaling.</p>
         <div style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="farmers.html" class="link-arrow">Apply as a Supply Partner <span class="arr">→</span></a>
-          <a href="https://wa.me/918219599053?text=Hi%20I%20am%20a%20mushroom%20farmer%20in%20India%20and%20want%20to%20sell%20my%20crop" class="link-arrow">WhatsApp Krish &amp; Anmol <span class="arr">→</span></a>
+          <a href="farmers.html" class="link-arrow" data-track="supplier">Apply as a Supply Partner <span class="arr">→</span></a>
+          <a href="https://wa.me/918219599053?text=Hi%20I%20am%20a%20mushroom%20farmer%20in%20India%20and%20want%20to%20sell%20my%20crop" class="link-arrow" data-track="whatsapp">WhatsApp Krish &amp; Anmol <span class="arr">→</span></a>
         </div>
         <p style="margin-top:16px;font-size:var(--step--1);color:var(--ink-mid);">Just starting out? <a href="reports.html" class="link-arrow">Get a feasibility report <span class="arr">→</span></a></p>
       </div>
@@ -591,9 +584,9 @@
           <p class="lede">Or skip the form — message us on WhatsApp. Every enquiry is answered by a real person on our team.</p>
         </div>
         <div class="final-cta-actions">
-          <a href="contact.html#buyer" class="btn btn-on-dark btn-lg">Request a Quote →</a>
-          <a href="contact.html#specs" class="btn btn-outline-on-dark btn-lg">Product specifications</a>
-          <a href="https://wa.me/918219599053" class="btn btn-outline-on-dark btn-lg">WhatsApp +91 8219599053</a>
+          <a href="contact.html#buyer" class="btn btn-on-dark btn-lg" data-track="quote">Request a Quote →</a>
+          <a href="contact.html#specs" class="btn btn-outline-on-dark btn-lg" data-track="specifications">Product specifications</a>
+          <a href="https://wa.me/918219599053" class="btn btn-outline-on-dark btn-lg" data-track="whatsapp">WhatsApp +91 8219599053</a>
         </div>
       </div>
     </div>
@@ -637,7 +630,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -651,7 +644,7 @@
 </footer>
 
 <!-- ===== FLOATING ===== -->
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -659,11 +652,11 @@
 </a>
 
 <nav class="smb" aria-label="Quick contact">
-  <a href="contact.html#buyer"  class="primary">Quote</a>
-  <a href="contact.html#specs" class="brand">Specs</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="contact.html#buyer"  class="primary" data-track="quote">Quote</a>
+  <a href="contact.html#specs" class="brand" data-track="specifications">Specs</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp">WhatsApp</a>
 </nav>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>

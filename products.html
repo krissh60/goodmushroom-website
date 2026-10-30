@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -40,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=8f0683e1912f" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,8 +68,8 @@
       <li><a href="about.html">About us</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-outline btn-sm">Product specs</a>
-      <a href="contact.html#buyer" class="btn btn-primary btn-sm">Request a Quote
+      <a href="contact.html" class="btn btn-outline btn-sm" data-track="specifications">Product specs</a>
+      <a href="contact.html#buyer" class="btn btn-primary btn-sm" data-track="quote">Request a Quote
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -107,8 +100,8 @@
     <a href="contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="contact.html" class="btn btn-primary btn-lg">Request a Quote →</a>
-    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="contact.html" class="btn btn-primary btn-lg" data-track="quote">Request a Quote →</a>
+    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg" data-track="whatsapp">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -134,6 +127,17 @@
   </div>
 </section>
 
+<section class="sec-bone-2" id="choose-material">
+  <div class="wrap">
+    <header class="sec-head"><div><span class="eyebrow">Buying ingredients in bulk</span><h2 class="h2">Choose the form<br>for your process.</h2></div><p>Start with species and form. The same mushroom as whole material, powder or extract needs a different specification.</p></header>
+    <div class="two-up">
+      <div class="form-card"><h3 class="h3">Whole or milled material</h3><p>For food, blending or further processing, discuss identity, variety, drying, particle size and handling. Fresh culinary material also needs a workable delivery route.</p><p><a href="products/cordyceps.html">Cordyceps fruiting-body routes</a> · <a href="products/lions-mane.html">Lion's Mane whole or powder</a> · <a href="products/oyster.html">Oyster fresh or dried</a></p></div>
+      <div class="form-card"><h3 class="h3">Extracts and custom formats</h3><p>For a formulated ingredient, discuss the source material, process, carriers, relevant assay method and required safety evidence. An extract ratio alone does not define the finished specification.</p><p><a href="products/extracts-dual.html">Mushroom extract powders</a> · <a href="products/reishi.html">Reishi formats</a> · <a href="products/extracts-blends.html">Custom blend scope</a></p></div>
+    </div>
+    <p style="margin-top:24px;">Before requesting a sample, share your evaluation quantity, delivery country and any QA requirements. Sample availability, charges, timing and evidence are agreed for the selected material. <a href="contact.html#buyer">Discuss your bulk requirement →</a></p>
+  </div>
+</section>
+
 <section class="sec-bone-2">
   <div class="wrap">
     <div class="cat-toolbar reveal">
@@ -148,51 +152,51 @@
     </div>
     
 <div class="cat-grid reveal-stagger">
-  <a href="products/cordyceps.html" class="cat-card" data-cat="medicinal">
+  <a href="products/cordyceps.html" class="cat-card" data-cat="medicinal" data-track="ingredient" data-product="cordyceps">
     <div class="cat-card-image"><picture><source srcset="images/cordyceps-extract.webp" type="image/webp"><img src="images/cordyceps-extract.jpg" alt="Cordyceps militaris extract and fruiting bodies" loading="lazy" decoding="async" width="1536" height="1024" /></picture><span class="cat-card-tag">MOQ on quote</span></div>
     <div class="cat-card-body"><h3>Cordyceps</h3><span class="cat-card-latin">Cordyceps militaris</span><div class="cat-card-meta"><span>Batch-specific testing; route confirmed to buyer specification</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/shiitake.html" class="cat-card" data-cat="culinary medicinal">
+  <a href="products/shiitake.html" class="cat-card" data-cat="culinary medicinal" data-track="ingredient" data-product="shiitake">
     <div class="cat-card-image"><picture><source srcset="images/shiitake.webp" type="image/webp"><img src="images/shiitake.jpg" alt="Shiitake" loading="lazy"  width="1200" height="848" /></picture><span class="cat-card-tag">Cold-chain</span></div>
     <div class="cat-card-body"><h3>Shiitake</h3><span class="cat-card-latin">Lentinula edodes</span><div class="cat-card-meta"><span>Beta-glucan assay on request</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/lions-mane.html" class="cat-card" data-cat="medicinal">
+  <a href="products/lions-mane.html" class="cat-card" data-cat="medicinal" data-track="ingredient" data-product="lions-mane">
     <div class="cat-card-image"><picture><source srcset="images/lions-mane.webp" type="image/webp"><img src="images/lions-mane.jpg" alt="Lion's Mane mushroom" loading="lazy"  width="1200" height="675" /></picture><span class="cat-card-tag">Route confirmed on quote</span></div>
     <div class="cat-card-body"><h3>Lion's Mane</h3><span class="cat-card-latin">Hericium erinaceus</span><div class="cat-card-meta"><span>Hericenone/erinacine assay on request</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/oyster.html" class="cat-card" data-cat="culinary">
+  <a href="products/oyster.html" class="cat-card" data-cat="culinary" data-track="ingredient" data-product="oyster">
     <div class="cat-card-image"><picture><source srcset="images/oyster.webp" type="image/webp"><img src="images/oyster.jpg" alt="Oyster mushrooms" loading="lazy"  width="1200" height="800" /></picture><span class="cat-card-tag">Fresh or dried route</span></div>
     <div class="cat-card-body"><h3>Oyster</h3><span class="cat-card-latin">Pleurotus spp.</span><div class="cat-card-meta"><span>Pearl · Pink · King</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/reishi.html" class="cat-card" data-cat="medicinal extract">
+  <a href="products/reishi.html" class="cat-card" data-cat="medicinal extract" data-track="ingredient" data-product="reishi">
     <div class="cat-card-image"><picture><source srcset="images/reishi.webp" type="image/webp"><img src="images/reishi.jpg" alt="Reishi mushroom" loading="lazy"  width="1200" height="773" /></picture><span class="cat-card-tag">Testing by specification</span></div>
     <div class="cat-card-body"><h3>Reishi</h3><span class="cat-card-latin">Ganoderma lucidum</span><div class="cat-card-meta"><span>Dual extract · spore oil</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/button.html" class="cat-card" data-cat="culinary">
+  <a href="products/button.html" class="cat-card" data-cat="culinary" data-track="ingredient" data-product="button">
     <div class="cat-card-image"><picture><source srcset="images/button.webp" type="image/webp"><img src="images/button.jpg" alt="Button mushrooms" loading="lazy"  width="1200" height="1200" /></picture><span class="cat-card-tag">Fresh, dried or brined</span></div>
     <div class="cat-card-body"><h3>Button &amp; Specialty</h3><span class="cat-card-latin">Agaricus bisporus</span><div class="cat-card-meta"><span>Fresh · Dried · Brined</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/extracts-dual.html" class="cat-card" data-cat="extract">
+  <a href="products/extracts-dual.html" class="cat-card" data-cat="extract" data-track="ingredient" data-product="extracts-dual">
     <div class="cat-card-image"><picture><source srcset="images/extract-powder-capsules.webp" type="image/webp"><img src="images/extract-powder-capsules.jpg" alt="Dual-extract mushroom powder and capsule formats" loading="lazy" decoding="async" width="1599" height="900" /></picture><span class="cat-card-tag">Quote-led format</span></div>
     <div class="cat-card-body"><h3>Dual-Extract Powders</h3><span class="cat-card-latin">Water + alcohol</span><div class="cat-card-meta"><span>Ratio confirmed by process route</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/extracts-spore-oil.html" class="cat-card" data-cat="extract">
+  <a href="products/extracts-spore-oil.html" class="cat-card" data-cat="extract" data-track="ingredient" data-product="extracts-spore-oil">
     <div class="cat-card-image"><picture><source srcset="images/reishi.webp" type="image/webp"><img src="images/reishi.jpg" alt="Reishi spore oil" loading="lazy"  width="1200" height="773" /></picture><span class="cat-card-tag">Format on quote</span></div>
     <div class="cat-card-body"><h3>Reishi Spore Oil</h3><span class="cat-card-latin">CO₂ supercritical</span><div class="cat-card-meta"><span>Triterpene / ganoderic-acid assay on request</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/extracts-blends.html" class="cat-card" data-cat="extract">
+  <a href="products/extracts-blends.html" class="cat-card" data-cat="extract" data-track="ingredient" data-product="extracts-blends">
     <div class="cat-card-image"><picture><source srcset="images/extract.webp" type="image/webp"><img src="images/extract.jpg" alt="Mushroom blends" loading="lazy"  width="1000" height="667" /></picture><span class="cat-card-tag">Scope-specific</span></div>
     <div class="cat-card-body"><h3>Custom Blends</h3><span class="cat-card-latin">Custom route</span><div class="cat-card-meta"><span>Scope confirmed on quote</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/ashwagandha.html" class="cat-card" data-cat="herb">
+  <a href="products/ashwagandha.html" class="cat-card" data-cat="herb" data-track="ingredient" data-product="ashwagandha">
     <div class="cat-card-image"><picture><source srcset="images/ashwagandha-roots-in-hand.webp" type="image/webp"><img src="images/ashwagandha-roots-in-hand.jpg" alt="Ashwagandha roots under quality inspection" loading="lazy" decoding="async" width="1599" height="900" /></picture><span class="cat-card-tag">Withanolide assay on request</span></div>
     <div class="cat-card-body"><h3>Ashwagandha</h3><span class="cat-card-latin">Withania somnifera</span><div class="cat-card-meta"><span>Root powder · Extract</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/tulsi.html" class="cat-card" data-cat="herb">
+  <a href="products/tulsi.html" class="cat-card" data-cat="herb" data-track="ingredient" data-product="tulsi">
     <div class="cat-card-image"><picture><source srcset="images/tulsi.webp" type="image/webp"><img src="images/tulsi.jpg" alt="Tulsi or holy basil crop" loading="lazy" decoding="async" width="1599" height="900" /></picture><span class="cat-card-tag">Testing by route</span></div>
     <div class="cat-card-body"><h3>Tulsi / Holy Basil</h3><span class="cat-card-latin">Ocimum sanctum</span><div class="cat-card-meta"><span>Leaf · Extract · Oil</span><span class="arr">→</span></div></div>
   </a>
-  <a href="products/shatavari-brahmi.html" class="cat-card" data-cat="herb">
+  <a href="products/shatavari-brahmi.html" class="cat-card" data-cat="herb" data-track="ingredient" data-product="shatavari-brahmi">
     <div class="cat-card-image"><picture><source srcset="images/herbs.webp" type="image/webp"><img src="images/herbs.jpg" alt="Ayurvedic herbs" loading="lazy"  width="1000" height="667" /></picture><span class="cat-card-tag">Documentation by route</span></div>
     <div class="cat-card-body"><h3>Shatavari · Brahmi · More</h3><span class="cat-card-latin">Bacopa · Asparagus · Moringa</span><div class="cat-card-meta"><span>Powder · Extract</span><span class="arr">→</span></div></div>
   </a>
@@ -242,8 +246,8 @@
         <p><strong>Ayurvedic herbs</strong> can be scoped by species, part, format, testing and destination. Ashwagandha, tulsi and other herb routes are confirmed individually; assay, certification, MOQ and regulatory documentation are not assumed from the category label. <a href="products/ashwagandha.html">Ayurvedic herb ingredient supply →</a></p>
 
         <div style="margin-top: 36px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="contact.html#buyer" class="btn btn-primary">Request a Quote</a>
-          <a href="https://wa.me/918219599053" class="btn btn-outline">WhatsApp the sourcing team</a>
+          <a href="contact.html#buyer" class="btn btn-primary" data-track="quote">Request a Quote</a>
+          <a href="https://wa.me/918219599053" class="btn btn-outline" data-track="whatsapp">WhatsApp the sourcing team</a>
         </div>
       </div>
     </div>
@@ -286,8 +290,8 @@
         <p>Good Mushroom is a sourcing and trading company. Testing and destination documents are commissioned or requested through the relevant supplier/partner route when required; any company registration, certification or phytosanitary status is confirmed before it is included in a quote.</p>
 
         <div style="margin-top: 48px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="contact.html#buyer" class="btn btn-primary">Request a Quote →</a>
-          <a href="https://wa.me/918219599053" class="btn btn-outline">WhatsApp the team</a>
+          <a href="contact.html#buyer" class="btn btn-primary" data-track="quote">Request a Quote →</a>
+          <a href="https://wa.me/918219599053" class="btn btn-outline" data-track="whatsapp">WhatsApp the team</a>
           <a href="faq.html" class="btn btn-outline">Read the full FAQ</a>
         </div>
       </div>
@@ -376,7 +380,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -389,7 +393,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -397,11 +401,11 @@
 </a>
 
 <nav class="smb" aria-label="Quick contact">
-  <a href="contact.html#buyer"  class="primary">Quote</a>
-  <a href="contact.html#specs" class="brand">Specs</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="contact.html#buyer"  class="primary" data-track="quote">Quote</a>
+  <a href="contact.html#specs" class="brand" data-track="specifications">Specs</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp">WhatsApp</a>
 </nav>
 
-<script src="js/main.js" defer></script>
+<script src="js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>
