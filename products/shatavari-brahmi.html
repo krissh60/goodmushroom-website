@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JPKHJHFQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3JPKHJHFQM');
-  </script>
+  <script src="../js/analytics.js?v=b5be774df109"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -40,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style.css?v=8f0683e1912f" />
 
   <script type="application/ld+json">
 {
@@ -117,7 +110,6 @@
   </script>
 </head>
 <body>
-<body>
 
 <nav class="nav" aria-label="Main">
   <div class="nav-inner">
@@ -134,8 +126,8 @@
       <li><a href="../about.html">About us</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="../contact.html" class="btn btn-outline btn-sm">Product specs</a>
-      <a href="../contact.html#buyer" class="btn btn-primary btn-sm">Request a Quote
+      <a href="../contact.html?product=shatavari-brahmi&amp;request=specs#specs" class="btn btn-outline btn-sm" data-track="specifications" data-product="shatavari-brahmi">Product specs</a>
+      <a href="../contact.html?product=shatavari-brahmi#buyer" class="btn btn-primary btn-sm" data-track="quote" data-product="shatavari-brahmi">Request a Quote
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" aria-label="Open menu">
@@ -166,8 +158,8 @@
     <a href="../contact.html">Contact <span class="arr">&rarr;</span></a>
   </nav>
   <div class="mobile-menu-foot">
-    <a href="../contact.html" class="btn btn-primary btn-lg">Request a Quote →</a>
-    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg">Chat on WhatsApp</a>
+    <a href="../contact.html?product=shatavari-brahmi#buyer" class="btn btn-primary btn-lg" data-track="quote" data-product="shatavari-brahmi">Request a Quote →</a>
+    <a href="https://wa.me/918219599053" class="btn btn-outline btn-lg" data-track="whatsapp" data-product="shatavari-brahmi">Chat on WhatsApp</a>
     <div class="mobile-menu-meta">
       <span>info@goodmushroom.in</span>
       <span>+91 8219599053</span>
@@ -190,8 +182,8 @@
         <h1 style="color:var(--bone);">Shatavari · Brahmi · Moringa · Neem · Giloy · Amla · <em>Triphala</em> blends.</h1>
         <p class="lede" style="color:rgba(255,255,255,0.75);">Bulk Ayurvedic herbs from India — Shatavari, Brahmi, Moringa and other route-specific ingredients. Testing, documentation, format and MOQ are confirmed against the buyer brief.</p>
         <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="#buy" class="btn btn-on-dark btn-lg">Request a Quote →</a>
-          <a href="../contact.html#specs" class="btn btn-outline-on-dark btn-lg">Product specifications</a>
+          <a href="#buy" class="btn btn-on-dark btn-lg" data-track="quote" data-product="shatavari-brahmi">Request a Quote →</a>
+          <a href="../contact.html?product=shatavari-brahmi&amp;request=specs#specs" class="btn btn-outline-on-dark btn-lg" data-track="specifications" data-product="shatavari-brahmi">Product specifications</a>
         </div>
       </div>
       <div class="page-hero-art reveal">
@@ -221,7 +213,7 @@
       <div class="spec-row"><div class="spec-key">Documentation</div><div class="spec-val">Relevant partner-lab evidence and destination documents reviewed before quoting</div></div>
       <div class="spec-row"><div class="spec-key">Packaging</div><div class="spec-val">Confirmed by format, storage and destination</div></div>
         </div>
-        <div class="price-callout"><strong>Pricing:</strong> on quote — depends on volume, certifications, packaging. Share your spec via the form and we send a request a route-specific quote.</div>
+        <div class="price-callout"><strong>Pricing:</strong> on quote — depends on volume, certifications, packaging. Share your specification through the form to request a route-specific quote.</div>
       </div>
 
       <div class="reveal">
@@ -235,23 +227,23 @@
             <input type="hidden" name="source_page" value="products/shatavari-brahmi.html" />
             <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
             <div class="form-row">
-              <div class="form-group"><label>Full name *</label><input type="text" name="name" required placeholder="Your name" /></div>
-              <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Company (optional)" /></div>
+              <div class="form-group"><label for="lead-field-1">Full name *</label><input type="text" name="name" required placeholder="Your name" / id="lead-field-1"></div>
+              <div class="form-group"><label for="lead-field-2">Company</label><input type="text" name="company" placeholder="Company (optional)" / id="lead-field-2"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="you@email.com" /></div>
-              <div class="form-group"><label>WhatsApp / phone</label><input type="tel" name="phone" placeholder="+1 555 123 4567" /></div>
+              <div class="form-group"><label for="lead-field-3">Email *</label><input type="email" name="email" required placeholder="you@email.com" / id="lead-field-3"></div>
+              <div class="form-group"><label for="lead-field-4">WhatsApp / phone</label><input type="tel" name="phone" placeholder="+1 555 123 4567" / id="lead-field-4"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Country *</label>
-                <select name="country" required><option value="">Select…</option><option>United States</option><option>United Kingdom</option><option>Germany</option><option>France</option><option>Netherlands</option><option>UAE / Dubai</option><option>Australia</option><option>Canada</option><option>Japan</option><option>South Korea</option><option>Singapore</option><option>India</option><option>Other</option></select>
+              <div class="form-group"><label for="lead-field-5">Country *</label>
+                <select name="country" required id="lead-field-5"><option value="">Select…</option><option>United States</option><option>United Kingdom</option><option>Germany</option><option>France</option><option>Netherlands</option><option>UAE / Dubai</option><option>Australia</option><option>Canada</option><option>Japan</option><option>South Korea</option><option>Singapore</option><option>India</option><option>Other</option></select>
               </div>
-              <div class="form-group"><label>Quantity</label><input type="text" name="quantity" placeholder="e.g. 50 kg / month" /></div>
+              <div class="form-group"><label for="lead-field-6">Quantity</label><input type="text" name="quantity" placeholder="e.g. 50 kg / month" / id="lead-field-6"></div>
             </div>
-            <div class="form-group"><label>Message *</label><textarea name="message" required placeholder="Spec, certifications needed, packaging, target market, timeline…"></textarea></div>
+            <div class="form-group"><label for="lead-field-7">Message (optional)</label><textarea name="message" placeholder="Spec, certifications needed, packaging, target market, timeline…" id="lead-field-7"></textarea></div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Request a Quote →</button>
             <p class="form-note">Each enquiry is reviewed before we reply.</p>
-            <div class="success-msg">✓ Thank you. We've received your enquiry and will be in touch after review.</div>
+            <div class="success-msg" role="status" aria-live="polite">✓ Thank you. We've received your enquiry and will be in touch after review.</div>
           </form>
         </div>
       </div>
@@ -288,25 +280,25 @@
             <input type="hidden" name="source_page" value="products/shatavari-brahmi.html" />
             <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
             <div class="form-row">
-              <div class="form-group"><label>Your name *</label><input type="text" name="name" required placeholder="Rajesh Kumar" /></div>
-              <div class="form-group"><label>WhatsApp / phone *</label><input type="tel" name="phone" required placeholder="+91 98765 43210" /></div>
+              <div class="form-group"><label for="lead-field-8">Your name *</label><input type="text" name="name" required placeholder="Rajesh Kumar" / id="lead-field-8"></div>
+              <div class="form-group"><label for="lead-field-9">WhatsApp / phone *</label><input type="tel" name="phone" required placeholder="+91 98765 43210" / id="lead-field-9"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Optional" /></div>
-              <div class="form-group"><label>State *</label>
-                <select name="state" required><option value="">Select…</option><option>Himachal Pradesh</option><option>Uttarakhand</option><option>Punjab</option><option>Haryana</option><option>Maharashtra</option><option>Karnataka</option><option>Kerala</option><option>Tamil Nadu</option><option>Madhya Pradesh</option><option>West Bengal</option><option>Other</option></select>
+              <div class="form-group"><label for="lead-field-10">Email</label><input type="email" name="email" placeholder="Optional" / id="lead-field-10"></div>
+              <div class="form-group"><label for="lead-field-11">State *</label>
+                <select name="state" required id="lead-field-11"><option value="">Select…</option><option>Himachal Pradesh</option><option>Uttarakhand</option><option>Punjab</option><option>Haryana</option><option>Maharashtra</option><option>Karnataka</option><option>Kerala</option><option>Tamil Nadu</option><option>Madhya Pradesh</option><option>West Bengal</option><option>Other</option></select>
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>Monthly volume</label><input type="text" name="capacity" placeholder="e.g. 200 kg / month" /></div>
-              <div class="form-group"><label>Experience</label>
-                <select name="experience"><option value="">Select…</option><option>Just starting</option><option>< 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select>
+              <div class="form-group"><label for="lead-field-12">Monthly volume</label><input type="text" name="capacity" placeholder="e.g. 200 kg / month" / id="lead-field-12"></div>
+              <div class="form-group"><label for="lead-field-13">Experience</label>
+                <select name="experience" id="lead-field-13"><option value="">Select…</option><option>Just starting</option><option>< 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select>
               </div>
             </div>
-            <div class="form-group"><label>About your operation</label><textarea name="message" placeholder="Substrate, growing method, certifications, what support you need…"></textarea></div>
+            <div class="form-group"><label for="lead-field-14">About your operation</label><textarea name="message" placeholder="Substrate, growing method, certifications, what support you need…" id="lead-field-14"></textarea></div>
             <button type="submit" class="btn btn-brand btn-lg btn-block">Submit supply-partner application →</button>
             <p class="form-note">Sourcing team will contact you after review</p>
-            <div class="success-msg">✓ Thank you. Our sourcing team will reach out after review.</div>
+            <div class="success-msg" role="status" aria-live="polite">✓ Thank you. Our sourcing team will reach out after review.</div>
           </form>
         </div>
       </div>
@@ -367,7 +359,7 @@
         <h5>Contact</h5>
         <div class="foot-contact">
           <a href="mailto:info@goodmushroom.in">info@goodmushroom.in</a>
-          <a href="https://wa.me/918219599053">+91 8219599053</a>
+          <a href="https://wa.me/918219599053" data-track="whatsapp" data-product="shatavari-brahmi">+91 8219599053</a>
           <span>Himachal Pradesh, India</span>
           <span>Mon–Sat · 10am–6pm IST</span>
         </div>
@@ -380,7 +372,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-float" href="https://wa.me/918219599053?text=Hi%20Good%20Mushroom" target="_blank" rel="noopener" aria-label="WhatsApp" data-track="whatsapp" data-product="shatavari-brahmi">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4l-.4-.2c-.6-.3-1.5-.7-1.7-.7-.2 0-.5.1-.7.4-.2.2-.6.6-.7.7-.1.1-.3.2-.5.1-.6-.3-1.4-.7-2.4-1.6-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.2 1.7.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.2zm-5.5 7.6c-1.6 0-3.3-.4-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3c-1-1.5-1.5-3.3-1.5-5.1 0-5.2 4.2-9.4 9.3-9.4 2.5 0 4.8 1 6.6 2.7 1.8 1.8 2.7 4.1 2.7 6.6 0 5.2-4.2 9.5-9.3 9.5zM20 4c-2.1-2.1-5-3.3-8-3.3C5.6.7.6 5.7.6 12c0 2 .5 3.9 1.5 5.6L.5 23.5l5.9-1.5c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5 11.4-11.3 0-3-1.2-5.9-3.3-8z"/></svg>
   </span>
@@ -388,11 +380,11 @@
 </a>
 
 <nav class="smb" aria-label="Quick contact">
-  <a href="../contact.html#buyer"  class="primary">Quote</a>
-  <a href="../contact.html#specs" class="brand">Specs</a>
-  <a href="https://wa.me/918219599053" class="wa">WhatsApp</a>
+  <a href="../contact.html?product=shatavari-brahmi#buyer"  class="primary" data-track="quote" data-product="shatavari-brahmi">Quote</a>
+  <a href="../contact.html?product=shatavari-brahmi&amp;request=specs#specs" class="brand" data-track="specifications" data-product="shatavari-brahmi">Specs</a>
+  <a href="https://wa.me/918219599053" class="wa" data-track="whatsapp" data-product="shatavari-brahmi">WhatsApp</a>
 </nav>
 
-<script src="../js/main.js" defer></script>
+<script src="../js/main.js?v=2e63f6f34522" defer></script>
 </body>
 </html>
